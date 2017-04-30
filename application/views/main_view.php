@@ -13,12 +13,12 @@
     </div>
     <div class="cb"></div>
     <div class="auth-form-inp">
+        <form action="/main/login" method="post">
         <div>
-            <input type="text" class="auth-inp" placeholder="email"><br>
+            <input type="email" class="auth-inp" placeholder="email"><br>
             <input type="password" class="auth-inp" placeholder="password">
         </div>
-        <button id="auth-submit-btn">
-            Увійти
-        </button>
+            <input type="submit" value="Увійти" id="auth-submit-btn">
+        </form>
     </div>
 </form>
