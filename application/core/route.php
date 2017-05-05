@@ -70,6 +70,13 @@ class Route {
         header('Location:' . $host . $page);
     }
 
+    static function ErrorPage403() {
+        $host = 'http://' . $_SERVER['HTTP_HOST'] . '/';
+        header('HTTP/1.1 403 Forbidden');
+        header("Status: 403 Forbidden");
+        header('Location:' . $host . '403');
+    }
+
     static function ErrorPage404() {
         $host = 'http://' . $_SERVER['HTTP_HOST'] . '/';
         header('HTTP/1.1 404 Not Found');
