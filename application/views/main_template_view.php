@@ -30,9 +30,7 @@
     <div class="auth-footer">
             <div id="uLogin" data-ulogin="display=panel;theme=flat;fields=first_name,last_name;providers=google,vkontakte,odnoklassniki,mailru,facebook,instagram;redirect_uri=http%3A%2F%2F;mobilebuttons=0;"></div>      </div>
     </footer>
-    
-    <script src="//ulogin.ru/js/ulogin.js"></script>
 
-</footer>
+    <script src="//ulogin.ru/js/ulogin.js"></script>
 </body>
 </html>

@@ -1,59 +1,70 @@
-body {
-  background-image: url(../img/auth_bg.jpg);
-  background-repeat: no-repeat;
-  background-size: 100%; }
+@import url('https://fonts.googleapis.com/css?family=Lobster');
 
-* {
-  outline: none; }
+body {
+	background: url('../img/bg.jpg');
+	/*font-family: 'AG_Helvetica', Arial;*/
+	font-family: Arial;
+}
+
+#header {
+	margin-top: 70px;
+	height: 120px;
+	background: url('../img/header-bg.png') no-repeat;
+	background-position: center center;
+	text-align: center;
+	position: relative;
+}
+
+#header h1 {
+	color: #fff;
+	font-weight: bold;
+	text-shadow: 0px 0px 5px #000;
+	text-align: center;
+	padding-top: 35px;
+	font-family: 'Lobster', cursive;
+}
 
 .cb {
   clear: both; }
 
-#header {
-  position: relative; }
-  #header .auth-header {
+.auth-header {
     margin-top: 40px;
     margin-bottom: 20px;
-    position: relative; }
-  #header .auth-header-title {
+    position: relative; 
+  }
+.auth-header-title {
     position: absolute;
     z-index: 20;
     text-align: center;
     width: 100%;
     height: 100%;
-    top: 0; }
-    #header .auth-header-title h1 {
-      color: white; }
-  #header .auth-header-bg {
+    top: 0; 
+  }
+.auth-header-title h1 {
+      color: white; 
+}
+.auth-header-bg {
     width: 80%;
     height: 90px;
     z-index: 10;
     margin-left: 10%;
     background-color: rgba(255, 255, 255, 0.2);
     position: relative;
-    border-radius: 60px; }
-
-#footer {
-  position: relative; }
-  #footer .auth-footer {
-    border-top: 1px solid white;
-    border-bottom: 1px solid white; }
-  #footer .auth-btns-wrap {
-    position: relative; }
-    #footer .auth-btns-wrap button {
-      display: inline-block;
-      background: none;
-      cursor: pointer; }
+    border-radius: 60px; 
+}
 
 #auth-form {
+	margin-top: 100px;
   text-align: center; }
   #auth-form .auth-form-header h4 p, #auth-form .auth-form-header h4 img {
     display: inline-block;
     color: white;
     float: left; }
   #auth-form .auth-form-header h4 p {
+  	font-size: 1.2em;
     margin-top: 120px; }
     #auth-form .auth-form-header h4 p a {
+    	font-size: 1.2em;
       color: white;
       text-decoration: underline; }
   #auth-form .auth-form-inp {
@@ -64,7 +75,7 @@ body {
       -webkit-border-radius: 10px;
       -moz-border-radius: 10px;
       border-radius: 8px;
-      background-color: red;
+      background-color: #591212;
       width: 350px;
       margin-bottom: 20px;
       height: 40px;
@@ -75,7 +86,7 @@ body {
       background-repeat: no-repeat;
       -webkit-background-size: cover;
       background-size: cover;
-      background-color: red;
+      background-color: #591212;
       color: white;
       margin-bottom: 25px;
       width: 200px;
@@ -84,4 +95,54 @@ body {
       border: 1px solid white;
       font-size: 1.5em; }
 
-/*# sourceMappingURL=main.css.map */
+.main-form {
+	width: 100%;
+	margin: 0 auto;
+}
+
+img.logo {
+	width: 150px;
+	height: auto;
+}
+
+#footer {
+	margin-top: 50px;
+	height: 100px;
+	background: 
+		url(../img/footer-line.png) center top no-repeat,
+		url(../img/footer-line.png) center bottom no-repeat;
+  position: relative; 
+}
+
+ #footer .auth-footer {
+  	padding: 20px;
+}
+
+#uLogin {
+	text-align: center;
+}
+
+#footer .auth-btns-wrap {
+    position: relative; 
+}
+
+#footer .auth-btns-wrap button {
+      display: inline-block;
+      background: none;
+      cursor: pointer; 
+}
+
+p#error-name,
+p#error-email,
+p#error-password
+{
+	color: #f1f1f1;
+		-webkit-transition: .4s ease-out;
+     -webkit-transition-delay: 0.5s;
+     -o-transition: .4s ease-out;
+     -o-transition-delay: 0.5s;
+     -moz-transition: .4s ease-out;
+     -moz-transition-delay: 0.5s;
+     transition: .4s ease-out;
+     transition-delay: 0.5s;
+}
