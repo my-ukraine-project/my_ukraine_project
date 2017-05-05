@@ -10,11 +10,10 @@ class Controller_Main extends Controller {
     function action_index() {
         $data = $this->model->get_user_by_session();
         if (!$data) {
-            $this->view->generate('main_view.php', 'main_template_view.php');
+            $this->view->generate('main_view.php', 'template_view.php');
         } else {
-            echo "Вы вошли как: ". $data->email .":". $data->fio;
+            $this->view->generate('main_dashboard_view.php', 'template_view.php', $data);
         }
-
     }
 
     function action_login() {

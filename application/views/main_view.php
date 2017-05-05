@@ -1,3 +1,7 @@
+<header id="header">
+        <h1>Славетний шлях Петра Сагайдачного</h1>
+</header>
+
 <div class="container">
     <form action="Main/login" id="auth-form">
 <div class="auth-form-header">
@@ -23,3 +27,10 @@
         </div>
     </form>
 </div>
+
+<footer id="footer">
+<div class="auth-footer">
+        <div id="uLogin" data-ulogin="display=panel;theme=flat;fields=first_name,last_name;providers=google,vkontakte,odnoklassniki,mailru,facebook,instagram;redirect_uri=http%3A%2F%2F;mobilebuttons=0;"></div>      </div>
+</footer>
+
+<script src="//ulogin.ru/js/ulogin.js"></script>
