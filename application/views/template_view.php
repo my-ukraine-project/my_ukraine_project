@@ -9,14 +9,14 @@
     <link rel="shortcut icon" href="favicon.png"/>
 
     <title>Главная</title>
-    <link rel="stylesheet" href="libs/bootstrap/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="/libs/bootstrap/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
 
-    <link rel="stylesheet" href="css/main.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="/css/main.css" media="screen" title="no title" charset="utf-8">
 
-    <script src="libs/jquery/jquery-3.1.0.min.js" charset="utf-8"></script>
-    <script src="libs/bootstrap/bootstrap.min.js" charset="utf-8"></script>
+    <script src="/libs/jquery/jquery-3.1.0.min.js" charset="utf-8"></script>
+    <script src="/libs/bootstrap/bootstrap.min.js" charset="utf-8"></script>
 
-    <script src="js/main.js" charset="utf-8"></script>
+    <script src="/js/main.js" charset="utf-8"></script>
 
 </head>
 <body>
