@@ -8,7 +8,13 @@ class Controller_Main extends Controller {
     }
 
     function action_index() {
-        $this->view->generate('main_view.php', 'main_template_view.php');
+        $data = $this->model->get_user_by_session();
+        if (!$data) {
+            $this->view->generate('main_view.php', 'main_template_view.php');
+        } else {
+            echo "Вы вошли как: ". $data->email .":". $data->fio;
+        }
+
     }
 
     function action_login() {
@@ -30,14 +36,16 @@ class Controller_Main extends Controller {
             return;
         }
 
-        if (!$this->model->user_exists($email, $password)) {
+        $data = $this->model->get_user($email, $password);
+        if (!$data) {
             Route::redirect("/");
             return;
         }
 
         $cookie = sha1(sprintf("%s:%s:%s", time(), $email, $password));
+        $this->model->save_session($data->id, $cookie, time() + SESSION_COOKIE_TTL);
 
-        setcookie("uid", $cookie, 0, "/");
+        setcookie("uid", $cookie, time() + SESSION_COOKIE_TTL, "/");
         Route::redirect("/");
     }
 }

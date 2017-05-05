@@ -17,10 +17,11 @@ class Controller_SignUp extends Controller {
             return;
         }
 
+        $fio = $this->model->escape($_POST["fio"]);
         $email = $this->model->escape($_POST["email"]);
         $password = $this->model->escape($_POST["password"]);
 
-        if (empty($_POST["register"]) && empty($email) && empty($password)) {
+        if (empty($_POST["register"]) && empty($fio) && empty($email) && empty($password)) {
             Route::redirect("/SignUp");
             return;
         }
@@ -35,7 +36,11 @@ class Controller_SignUp extends Controller {
             return;
         }
 
-        $this->model->register($email, $password);
+        if (!$this->model->register($fio, $email, $password)) {
+            echo "незарегался";
+            return;
+        }
+
         Route::redirect("/");
     }
 }

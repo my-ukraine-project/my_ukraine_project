@@ -6,4 +6,4 @@ define('DATABASE_LOGIN',    "sagaidacniy");
 define('DATABASE_PASSWORD', "sagaidacniy:getman:rulez");
 
 define('SESSION_COOKIE_ID', "uid");
-define('SESSION_COOKIE_TTL', /* выбирите нужное время жизни */ 0);
+define('SESSION_COOKIE_TTL', /* выбирите нужное время жизни */ ((60 * 60) * 24) * 30);
