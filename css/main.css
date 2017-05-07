@@ -394,3 +394,27 @@ a.content-info-link:hover {
   color: #72130a;
   font-weight: bolder;
 }
+
+/* =========== Media CSS ========== */
+
+@media screen and (max-width: 995px) {
+  body {
+    font-size: 98%;
+  }
+}
+
+@media screen and (max-width: 995px) , screen and (max-height: 780px) {
+  body {
+    font-size: 98%;
+  }
+  .main-menu ul li {
+    list-style: none;
+    height: 40px;
+  }
+  .main-menu ul li a i {
+    font-size: 1em;
+    display: inline-block;
+    width: 30px;
+    text-align: center;
+  }
+}
