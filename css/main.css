@@ -480,4 +480,12 @@ p.bio-sourse:first-letter {
     width: 30px;
     text-align: center;
   }
+
+  .main-menu ul li p i {
+    font-size: 1em;
+    display: inline-block;
+    width: 30px;
+    text-align: center;
+  }
+
 }
