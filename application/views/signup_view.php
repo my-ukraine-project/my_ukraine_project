@@ -25,7 +25,7 @@
 				<p id="error-password"></p>
 				<input name="password" type="password" class="auth-inp" placeholder="Пароль">
 			</div>
-			<input id="auth-submit-btn" type="submit" name="register" value="Зареєструватися"></input>
+			<input id="auth-submit-btn" type="submit" name="register" value="Зареєструватися">
 		</div>
 	</form>
 </div>

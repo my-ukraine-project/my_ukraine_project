@@ -3,7 +3,7 @@
 </header>
 
 <div class="container">
-    <form action="Main/login" id="auth-form">
+    <form action="Main/login" method="post" id="auth-form">
 <div class="auth-form-header">
     <h4 class="text-center">
         <div style="display:inline-block">
@@ -18,12 +18,10 @@
         <div class="cb"></div>
         <div class="auth-form-inp">
             <div>
-                <input type="text" class="auth-inp" placeholder="Email"><br>
-                <input type="password" class="auth-inp" placeholder="Пароль">
+                <input type="text" name="email" class="auth-inp" placeholder="Email"><br>
+                <input type="password" name="password" class="auth-inp" placeholder="Пароль">
             </div>
-            <button id="auth-submit-btn">
-                Увійти
-            </button>
+            <input type="submit" name="login" value="Увійти" id="auth-submit-btn">
         </div>
     </form>
 </div>

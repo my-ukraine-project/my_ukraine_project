@@ -10,6 +10,7 @@
 
     <title>Главная</title>
     <link rel="stylesheet" href="/libs/bootstrap/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="../../libs/fontawesome/css/font-awesome.min.css">
 
     <link rel="stylesheet" href="/css/main.css" media="screen" title="no title" charset="utf-8">
 
