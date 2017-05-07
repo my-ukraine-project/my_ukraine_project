@@ -2,7 +2,7 @@
 	<div class="row">
 		<div class="col-sm-12">
 			<div class="error">
-				<img src="../../img/gray-logo.png" alt="">
+				<img src="/img/gray-logo.png" alt="">
 				<h1>403</h1>
 				<p>Forbidden!</p>
 			</div>

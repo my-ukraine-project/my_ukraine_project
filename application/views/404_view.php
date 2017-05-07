@@ -2,7 +2,7 @@
 	<div class="row">
 		<div class="col-sm-12">
 			<div class="error">
-				<img src="../../img/gray-logo.png" alt="">
+				<img src="/img/gray-logo.png" alt="">
 				<h1>404</h1>
 				<p>Not Found</p>
 			</div>
