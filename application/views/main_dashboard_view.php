@@ -7,7 +7,7 @@
 			</div>
 			<div class="main-menu">
 				<ul>
-					<li><a href="/"> <i class="fa fa-home" aria-hidden="true"></i> Головна</a></li>
+					<li><a href="/" style="color: #FF7416; text-shadow: 0px 0px 1px #000; font-weight: bold;"> <i class="fa fa-home" aria-hidden="true"></i> Головна</a></li>
 					<li><a href="/Information"> <i class="fa fa-info" aria-hidden="true"></i> Інформація</a></li>
 					<li><a href="/Quests"> <i class="fa fa-tasks" aria-hidden="true"></i> Квести</a></li>
 					<li><a href="/Rating"> <i class="fa fa-bar-chart" aria-hidden="true"></i> Рейтинг</a></li>
@@ -20,6 +20,9 @@
 					40%
 				</div>
 				<p>пройдено</p>
+				<div class="logout">
+          <button type="button" class="btn btn-danger">Вийти</button>
+				</div>
 			</div>
 		</div>
 		<div id="content">
@@ -30,7 +33,7 @@
 							<div class="content-welcome-text">
 								<p><b>Дорогий друже, раді вітати тебе на порталі "Славетний шлях Петра Сагайдачного"!</b></p>
 								<p>Перед тим, як проходити квести, радимо тобі ознайомитися з біографією Петра Сагайдачного та основними подіями з його життя.</p>
-								<p>Зробити це можна на сторінці <a href="">Інформація</a>.</p>
+								<p>Зробити це можна на сторінці <a href="/Information">Інформація</a>.</p>
 							</div>
 						</div>
 					</div>

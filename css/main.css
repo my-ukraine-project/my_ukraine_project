@@ -2,7 +2,6 @@
 
 body {
 	background: url('../img/bg.jpg');
-	/*font-family: 'AG_Helvetica', Arial;*/
 	font-family: Arial;
 }
 
@@ -235,6 +234,13 @@ a.error-main-link:hover {
   padding-bottom: 40px;
 }
 
+.logout {
+  margin-top: 30px;
+  display: block;
+  clear: both;
+  color: #000;
+}
+
 .welcome, 
 .advance {
   color: #fff;
@@ -253,7 +259,7 @@ a.error-main-link:hover {
   height: 50px;
 }
 .main-menu ul li a i {
-  font-size: 1.3em;
+  font-size: 1.4em;
   display: inline-block;
   width: 60px;
   text-align: center;
@@ -261,7 +267,7 @@ a.error-main-link:hover {
 
 .main-menu ul li a {
   color: #fff;
-  font-size: 1.4em;
+  font-size: 1.2em;
   display: block;
   text-transform: uppercase;
 }
@@ -395,18 +401,62 @@ a.content-info-link:hover {
   font-weight: bolder;
 }
 
+/* ========== Information Page ========== */
+
+.bio img {
+  margin-bottom: 30px;
+  width: 80%;
+  height: auto;
+}
+
+.bio p {
+  font-size: 1.3em;
+  text-align: justify;
+}
+
+.bio p:first-letter {
+  font-size: 150%;
+  padding-left: 30px;
+}
+
+p.bio-sourse {
+  font-size: 1em;
+  text-align: right;
+  font-style: italic;
+  margin-top: 30px;
+}
+
+p.bio-sourse:first-letter {
+  font-size: 100%;
+}
+
+
 /* =========== Media CSS ========== */
 
 @media screen and (max-width: 995px) {
   body {
-    font-size: 98%;
+    font-size: 99%;
   }
 }
 
 @media screen and (max-width: 995px) , screen and (max-height: 780px) {
+
   body {
-    font-size: 98%;
+    font-size: 99%;
   }
+
+  #sidebar {
+    width: 200px;
+  }
+
+  #content {
+    width: calc(100vw - 220px);
+  }
+
+  #content img {
+    margin: 10px;
+  }
+
   .main-menu ul li {
     list-style: none;
     height: 40px;
