@@ -272,6 +272,19 @@ a.error-main-link:hover {
   text-transform: uppercase;
 }
 
+.main-menu ul li p i {
+  font-size: 1.4em;
+  display: inline-block;
+  width: 60px;
+  text-align: center;
+}
+
+.main-menu ul li p {
+  font-size: 1.2em;
+  display: block;
+  text-transform: uppercase;
+}
+
 .main-menu ul li a:hover {
   padding-left: 10px;
   text-decoration: none;
