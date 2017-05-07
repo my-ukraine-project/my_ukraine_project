@@ -30,6 +30,21 @@
 
 				<h1>Квести</h1>
 
+<?php
+
+$quest_counter = 0;
+foreach ($data["quests"] as $quest) {
+    $quest_counter++;
+?>
+    <div>
+        <a href="/Quests/pass?q=<?= $quest->id ?>">
+            <span><?= $quest_counter ?></span>
+            <p><?= $quest->data->target ?></p>
+            <span><?= $quest->fio ?></span>
+        </a>
+    </div>
+<?php } ?>
+
 				<div class="row">
 					<footer id="footer-dashboard">
 						<p>Поділися квестами з друзями! <i class="fa fa-arrow-down" aria-hidden="true"></i> </p>
