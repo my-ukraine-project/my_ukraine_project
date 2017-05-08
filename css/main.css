@@ -2,7 +2,7 @@
 
 body {
 	background: url('../img/bg.jpg');
-	font-family: Arial;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 h1, h2, h3, h4 {
@@ -234,13 +234,6 @@ a.error-main-link:hover {
   padding-bottom: 40px;
 }
 
-.logout {
-  margin-top: 30px;
-  display: block;
-  clear: both;
-  color: #000;
-}
-
 .welcome, 
 .advance {
   color: #fff;
@@ -307,6 +300,13 @@ a.error-main-link:hover {
     -o-transition-duration: 1s;
     -moz-transition-duration: 1s;
     transition-duration: 1s;
+}
+
+.logout {
+  margin-top: 30px;
+  display: block;
+  clear: both;
+  color: #000;
 }
 
 #content {
@@ -418,7 +418,7 @@ a.content-info-link:hover {
 
 .bio img {
   margin-bottom: 30px;
-  width: 80%;
+  width: 60%;
   height: auto;
 }
 
@@ -443,6 +443,30 @@ p.bio-sourse:first-letter {
   font-size: 100%;
 }
 
+.multicolumn {
+  -moz-column-count: 2;
+  -webkit-column-count: 2;
+  column-count: 2; /* оптимальное количество колонок */
+  
+  -moz-column-gap: 25px;
+  -webkit-column-gap: 25px;      
+  column-gap: 25px; /* расстояние между колонками */
+  
+  -moz-column-width: auto; 
+  -webkit-column-width: auto;       
+  column-width: auto; /* оптимальная ширина колонок */
+  
+  -moz-column-rule: medium none;
+  -webkit-column-rule: medium none;       
+  column-rule: medium none; /* разделительная линия между колонками */
+} 
+
+img.chronology {
+  max-width: 300px;
+  width: auto;
+  height: auto;
+  margin-bottom: 40px;
+}
 
 /* =========== Media CSS ========== */
 
@@ -460,6 +484,13 @@ p.bio-sourse:first-letter {
 
   #sidebar {
     width: 200px;
+  }
+
+  #sidebar img {
+    display:block; 
+    margin:0 auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
 
   #content {
@@ -487,5 +518,11 @@ p.bio-sourse:first-letter {
     width: 30px;
     text-align: center;
   }
+
+  .multicolumn {
+    -moz-column-count: 1;
+    -webkit-column-count: 1;
+    column-count: 1; /* оптимальное количество колонок */
+  } 
 
 }
