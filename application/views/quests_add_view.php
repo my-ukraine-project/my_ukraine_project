@@ -28,29 +28,78 @@
         <div id="content">
 
             <div class="row">
+                <div class="col-sm-10"><h1>Додавання квесту</h1></div>
+                <div class="col-sm-2"><a class="btn btn-danger" href="/Quests" style="margin-top: 40px;">Повернутися на квести</a></div>
+            </div>
+
+            <div class="row">
                 <div class="col-sm-6">
-                    <h3>Який елемент додаємо?</h3>
-                    <select class="form-control" name="content">
+
+                <h4>Назва квесту</h4>
+                <input class="form-control" type="text">
+
+                <h4>Мета квесту</h4>
+                <textarea class="form-control" name="target" id="" cols="30" rows="10"></textarea>
+
+                <br><br>
+
+                <ul id="myTab" class="nav nav-tabs">
+                  <li class="active"><a href="#panel1">Завдання 1</a></li>
+                  <li><a href="#panel2">Завдання 2</a></li>
+                  <li><a href="#panel3">Завдання 3</a></li>
+                  <li><a href="#panel4">Завдання 4</a></li>
+                  <li><a href="#panel5">+</a></li>
+                </ul>
+
+                <div class="tab-content">
+                  <div id="panel1" class="tab-pane fade in active">
+
+                    <h4>Який елемент додаємо?</h4>
+
+                    <select class="form-control" name="content" id="typeOfTask">
                         <option value="1">Картинку</option>
                         <option value="2">Текст</option>
                         <option value="3">Видео</option>
                         <option value="4">Карту</option>
+                        <option value="5">Пазл</option>
                     </select>
 
-                    <h3>Мета квесту</h3>
-                    <textarea class="form-control" name="target" id="" cols="30" rows="10"></textarea>
-
-                    <h3>Варіанти відповідей</h3>
-                    <input class="form-control" type="text" name="answer"/>
-                    <input  class="form-control"type="button" name="add" value="Додати ще один варіант">
-                    
-                    <div id="quest-answers"></div>
-
-                    <div style="margin-top: 40px;">
-                        <input class="btn btn-primary btn-lg" type="button" name="send-form" value="Добавить квест">
+                    <div id="img" style="display:block; margin-top: 30px;">
+                        <h4>Виберіть зображення</h4>
+                        <input type="file">
                     </div>
+                    <div id="text"  style="display:none">
+                        <h4>Додайте текст</h4>
+                        <textarea class="form-control" name="" id="" cols="30" rows="10"></textarea>
+                    </div>
+                    <div id="video"  style="display:none">
+                        <h4>Додайте код відео</h4>
+                        <textarea class="form-control" name="" id="" cols="30" rows="5"></textarea>
+                    </div>
+                    <div id="map"  style="display:none">
+                        <h4>Додайте код карти</h4>
+                        <textarea class="form-control" name="" id="" cols="30" rows="5"></textarea>
+                    </div>
+                    <div id="puzzle"  style="display:none">
+                        <h4>Виберіть зображення</h4>
+                        <input type="file">
+                    </div>
+
+                    <h4>Питання</h4>
+                    <input class="form-control" type="text">
+                    
+                    <h4>Варіанти відповідей</h4>
+                    <input class="form-control" type="text" name="answer" placeholder="1 варіант"><br>
+                    <input class="form-control" type="text" name="answer" placeholder="2 варіант"><br>
+                    <input class="form-control" type="text" name="answer" placeholder="3 варіант"><br>
+                    <input class="form-control" type="text" name="answer" placeholder="4 варіант"><br>
+
+                  </div>
                 </div>
-            </div>
+
+                <div style="margin-top: 40px;">
+                    <input class="btn btn-primary btn-lg" type="button" name="send-form" value="Додати квест">
+                </div>
 
                 <div class="row">
                     <footer id="footer-dashboard">
@@ -75,6 +124,23 @@
 <script src="//yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script>
 <script src="//yastatic.net/share2/share.js"></script>
 
+<script>
+document.getElementById("typeOfTask")
+    .onchange = function () {
+        var b = {
+            1: "img",
+            2: "text",
+            3: "video",
+            4: "map",
+            5: "puzzle"
+        }, c = this.value,
+            a;
+        for (a in b) document.getElementById(b[a])
+            .style.display = 0 == c || c == a ? "block" : "none"
+};
+</script>
+
+<!-- ========== Обработка формы =========== -->
 <script type="text/javascript">
 
 function QuestAdd() {}
@@ -138,5 +204,16 @@ QuestAdd.prototype.sendForm = function () {
 $(function () {
     var app = new QuestAdd();
     app.run();
+});
+</script>
+<!-- =========== КОНЕЦ обработки формы ========== -->
+
+<!-- Для отображения табов -->
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $("#myTab a").click(function(e){
+    e.preventDefault();
+    $(this).tab('show');
+  });
 });
 </script>

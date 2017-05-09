@@ -28,65 +28,10 @@
 		<div id="content">
 			<div class="container-fluid">
 
-			<ul id="myTab2" class="nav nav-tabs">
-			  <li><a data-toggle="tab" href="#panely1">Пазли</a></li>
-			  <li><a data-toggle="tab" href="#panely2">Тести</a></li>
-	      <li><a data-toggle="tab" href="#panely3">???</a></li>
-			</ul>
-			 
-			<div class="tab-content">
-			  <div id="panely1" class="tab-pane fade in active">
-					<h3>Пазли</h3>
-					<div class="row">
-					<div class="col-sm-3">
-						<img class="puzzle" src="/img/portrait.jpg"><br><br>
-						<img class="puzzle" onLoad="snapfit.add(this);" src="/img/portrait.jpg" id="portrait">
-						<br><br>
-							<strong>Рівень складності</strong> <select id="level" size="1" onchange="snapfit.reset(document.getElementById('portrait'),parseInt(this.options[this.selectedIndex].value));">
-							  <option value="0" selected="selected">160px (самый легкий)</option>
-							  <option value="1">128px (очень легкий)</option>
-							  <option value="2">104px (легкий)</option>
-							  <option value="3">080px (средний)</option>
-							  <option value="4">064px (высокий)</option>
-							  <option value="5">056px (очень высокий)</option>
-							  <option value="6">048px (самый высокий)</option>
-							</select><br><br>
-							<button class="btn btn-primary" type="button" onclick="snapfit.admix(document.getElementById('portrait'));">Перемішати</button>
-							<button class="btn btn-success" type="button" onclick="snapfit.solve(document.getElementById('portrait'));">Зібрати</button><br>
-					</div>
-
-					<div class="col-sm-9">
-						<h4>Як керувати?</h4>
-						<p><b>перейти:</b> перетягнути</p>
-						<p><b>перевернути:</b> подвійний клік</p>
-						<p><b>фліп-у:</b> подвійний клік + [Shift] або середньою кнопкою миші</p>
-						<p><b>фліп-х:</b> подвійний клік + [Alt] або правою кнопки миші</p>
-						<br>
-						<p><b>скинути:</b> натисніть [escape]</p>
-						<p><b>перемішати:</b> натисніть [enter]</p>
-					</div>
+				<div class="row">
+					<div class="col-sm-10"><h1>Квести</h1></div>
+					<div class="col-sm-2"><a class="btn btn-danger" href="/Quests/add" style="margin-top: 40px;">Додати квест</a></div>
 				</div>
-				</div>
-			  <div id="panely2" class="tab-pane fade">
-			    <h3>Тести</h3>
-			    <?php
-						$quest_counter = 0;
-						foreach ($data["quests"] as $quest) {
-						    $quest_counter++;
-						?>
-						    <div>
-						        <a href="/Quests/pass?q=<?= $quest->id ?>">
-						            <span><?= $quest_counter ?></span>
-						            <p><?= $quest->data->target ?></p>
-						            <span><?= $quest->fio ?></span>
-						        </a>
-						    </div>
-					<?php } ?>
-			  </div>
-			  <div id="panely3" class="tab-pane fade">
-			    <h3>3</h3>
-			  </div>
-			</div>
 
 				<div class="row">
 					<footer id="footer-dashboard">
