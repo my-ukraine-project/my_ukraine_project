@@ -7,7 +7,7 @@ body {
 
 h1, h2, h3, h4 {
   display: block;
-  margin-top: 20px;
+  margin-top: 40px;
   margin-bottom: 40px;
 }
 
@@ -305,8 +305,6 @@ a.error-main-link:hover {
 .logout {
   margin-top: 30px;
   display: block;
-  clear: both;
-  color: #000;
 }
 
 #content {
@@ -466,6 +464,12 @@ img.chronology {
   width: auto;
   height: auto;
   margin-bottom: 40px;
+}
+
+/* =========== Quests Page ===========*/
+img.puzzle {
+  min-width: 320px;
+  width: auto;
 }
 
 /* =========== Media CSS ========== */

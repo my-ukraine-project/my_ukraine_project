@@ -11,6 +11,7 @@
     <title>Главная</title>
     <link rel="stylesheet" href="/libs/bootstrap/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
     <link rel="stylesheet" href="/libs/fontawesome/css/font-awesome.min.css">
+    <script type="text/javascript" src="/js/snapfit.js"></script>
 
     <link rel="stylesheet" href="/css/main.css" media="screen" title="no title" charset="utf-8">
 
