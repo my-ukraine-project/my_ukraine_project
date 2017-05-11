@@ -58,7 +58,7 @@
                             <h4>Який елемент додаємо?</h4>
 
                             <select class="form-control" name="content1">
-                                <option value="img">Картинку</option>
+                                <option value="image">Картинку</option>
                                 <option value="text">Текст</option>
                                 <option value="video">Видео</option>
                                 <option value="map">Карту</option>
@@ -108,7 +108,7 @@
                             <h4>Який елемент додаємо?</h4>
 
                             <select class="form-control" name="content2">
-                                <option value="img">Картинку</option>
+                                <option value="image">Картинку</option>
                                 <option value="text">Текст</option>
                                 <option value="video">Видео</option>
                                 <option value="map">Карту</option>
@@ -155,7 +155,7 @@
                             <h4>Який елемент додаємо?</h4>
 
                             <select class="form-control" name="content3">
-                                <option value="img">Картинку</option>
+                                <option value="image">Картинку</option>
                                 <option value="text">Текст</option>
                                 <option value="video">Видео</option>
                                 <option value="map">Карту</option>
@@ -202,7 +202,7 @@
                             <h4>Який елемент додаємо?</h4>
 
                             <select class="form-control" name="content4">
-                                <option value="img">Картинку</option>
+                                <option value="image">Картинку</option>
                                 <option value="text">Текст</option>
                                 <option value="video">Видео</option>
                                 <option value="map">Карту</option>
@@ -249,7 +249,7 @@
                             <h4>Який елемент додаємо?</h4>
 
                             <select class="form-control" name="content5">
-                                <option value="img">Картинку</option>
+                                <option value="image">Картинку</option>
                                 <option value="text">Текст</option>
                                 <option value="video">Видео</option>
                                 <option value="map">Карту</option>
@@ -333,7 +333,7 @@
 <script>
 $(function () {
     $("div.tab-content").on("change", "select", function (e) {
-        var b = ["img", "text", "video", "map", "puzzle"];
+        var b = ["image", "text", "video", "map", "puzzle"];
 
         for (var i = 0; i < b.length; i++) {
             var item = $(this).parent().children(".add-" + b[i]);
