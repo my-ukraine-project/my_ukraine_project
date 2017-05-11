@@ -3,7 +3,7 @@
 		<div id="sidebar">
 			<img src="/img/logo.png" alt="" class="logo">
 			<div class="welcome">
-				<p>Привiт, <b><?= explode(" ", $data->fio, 2)[0] ?></b>!</p>
+				<p>Привiт, <b><?php $var = explode(" ", $data->fio, 2); echo $var[0]; ?></b>!</p>
 			</div>
 			<div class="main-menu">
 				<ul>
@@ -21,7 +21,7 @@
 				</div>
 				<p>пройдено</p>
 				<div class="logout">
-                    <a href="/Main/logout" class="btn btn-danger">Вийти</a>
+          <a href="/Main/logout" class="btn btn-danger">Вийти</a>
 				</div>
 			</div>
 		</div>
@@ -49,7 +49,7 @@
 						<div class="content-info">
 							<p><b>Петро Кононович Конашевич-Сагайдачний</b> народився бл. 1582р. в селі Кульчиці в православній родині (тепер село Самбірського району Львівської області). <br><br> Упродовж 1589–1592 рр. здобував початкову освіту у Самборі. З 1592 по 1598 роки навчався в Острозькій академії. <br><br> Після випуску П.Сагайдачний переїхав до Львова, згодом — до Києва, де працював домашнім учителем, також помічником київського земського судді. <br><br> Змалку навчався військовій справі, вмів стріляти з лука, був високоосвіченою, інтелігентною, глибоко релігійною людиною. Брав участь в Молдавській і Лівонської кампаніях 1600-1603 рр.</p>
 						</div>
-						<a href="" class="content-info-link">Читати далі <i class="fa fa-arrow-right" aria-hidden="true"></i> </a>
+						<a href="/Information" class="content-info-link">Читати далі <i class="fa fa-arrow-right" aria-hidden="true"></i> </a>
 					</div>
 				</div>
 			</div>

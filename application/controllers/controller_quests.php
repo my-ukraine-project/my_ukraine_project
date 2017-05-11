@@ -22,7 +22,7 @@ class Controller_Quests extends Controller {
             return (object)$item;
         }, $quests);
 
-        $data = array("user" => $user, "quests" => $quests);
+        $data = (object)array("user" => $user, "quests" => $quests);
 
         $this->view->generate('quests_view.php', 'template_view.php', $data);
     }
@@ -154,8 +154,11 @@ class Controller_Quests extends Controller {
             return;
         }
 
+        $user = $this->model->get_user_by_session();
+        $data = (object)array("user" => $user);
+
         if ($_SERVER["REQUEST_METHOD"] != "POST") {
-            $this->view->generate('quests_add_view.php', 'template_view.php');
+            $this->view->generate('quests_add_view.php', 'template_view.php', $data);
             return;
         }
 

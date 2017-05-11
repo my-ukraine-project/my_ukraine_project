@@ -3,7 +3,7 @@
 		<div id="sidebar">
 			<img src="/img/logo.png" alt="" class="logo">
 			<div class="welcome">
-				<p>Привiт, <b>Username</b>!</p>
+				<p>Привiт, <b><?php $var = explode(" ", $data->user->fio, 2); echo $var[0]; ?></b>!</p>
 			</div>
 			<div class="main-menu">
 				<ul>
@@ -20,9 +20,9 @@
 					40%
 				</div>
 				<p>пройдено</p>
-				<div class="logout">
-          <button type="button" class="btn btn-danger">Вийти</button>
-				</div>
+        <div class="logout">
+            <a href="/Main/logout" class="btn btn-danger">Вийти</a>
+        </div>
 			</div>
 		</div>
 		<div id="content">
@@ -36,11 +36,11 @@
                 <div class="row">
 <?php
 
-if (empty($data["quests"])) {
+if (empty($data->quests)) {
     ?><h3> Пока не добавлено ни одноого квеста, не поленитесь и добавте!</h3><?php
 } else {
 
-foreach ($data["quests"] as $quest) { ?>
+foreach ($data->quests as $quest) { ?>
     <div class="quest">
         <a href="/Quests/passing?q=<?= $quest->id ?>"><h5><?= $quest->data->name ?></h5></a>
         <p><?= $quest->data->target ?></p>
