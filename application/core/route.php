@@ -12,7 +12,8 @@ class Route {
         $action_name = 'index';
 
         //разбиваем uri на страницы
-        $routes = explode('/', $_SERVER['REQUEST_URI']);
+        $routes = explode('?', $_SERVER['REQUEST_URI'])[0];
+        $routes = explode('/', $routes);
 
         // получаем имя контроллера, начинаем с первого, т.к. 0й элемент - dns-адрес хоста
         if (!empty($routes[1])) {

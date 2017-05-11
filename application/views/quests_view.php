@@ -33,6 +33,27 @@
 					<div class="col-sm-2"><a class="btn btn-danger" href="/Quests/add" style="margin-top: 40px;">Додати квест</a></div>
 				</div>
 
+                <div class="row">
+<?php
+
+if (empty($data["quests"])) {
+    ?><h3> Пока не добавлено ни одноого квеста, не поленитесь и добавте!</h3><?php
+} else {
+
+foreach ($data["quests"] as $quest) { ?>
+    <div class="quest">
+        <a href="/Quests/passing?q=<?= $quest->id ?>"><h5><?= $quest->data->name ?></h5></a>
+        <p><?= $quest->data->target ?></p>
+        <span><?= $quest->fio ?></span>
+    </div>
+
+<?php }
+
+}
+
+?>
+                </div>
+
 				<div class="row">
 					<footer id="footer-dashboard">
 						<p>Поділися квестами з друзями! <i class="fa fa-arrow-down" aria-hidden="true"></i> </p>
@@ -55,10 +76,3 @@
 
 <script src="//yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script>
 <script src="//yastatic.net/share2/share.js"></script>
-
-<!-- Отображение 1 таба по умолчанию -->
-<script type="text/javascript">
-$(document).ready(function(){ 
-    $("#myTab2 li:eq(0) a").tab('show');
-});
-</script>

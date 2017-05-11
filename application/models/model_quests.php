@@ -16,4 +16,13 @@ class Model_Quests extends Model {
         return $ret ? $ret->fetch_all( MYSQLI_ASSOC ) : null;
     }
 
+
+    public function get_quest_by_id($id) {
+        $ret = $this->mysqli->query(
+            "SELECT q.*, u.fio FROM
+                    Quests AS q JOIN Users AS u ON q.user_id = u.id
+                WHERE q.id = $id;");
+        return $ret ? (object)$ret->fetch_assoc() : null;
+    }
+
 }
