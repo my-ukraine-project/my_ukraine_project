@@ -17,7 +17,7 @@
 			<div class="advance">
 				<p>Мої <b>успіхи</b></p>
 				<div class="advance-percent">
-					40%
+					50%
 				</div>
 				<p>пройдено</p>
 				<div class="logout">
