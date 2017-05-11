@@ -27,6 +27,28 @@ class Controller_Quests extends Controller {
         $this->view->generate('quests_view.php', 'template_view.php', $data);
     }
 
+    function action_passing() {
+        $user = $this->model->get_user_by_session();
+        if (!$user) {
+            Route::redirect("/");
+            return;
+        }
+
+        if (!isset($_GET["q"]) || empty($_GET["q"]) || !is_numeric($_GET["q"])) {
+            Route::redirect("/Quests");
+            return;
+        }
+
+        $quest = $this->model->get_quest_by_id(intval($_GET["q"]));
+        $quest->data = json_decode($quest->data);
+
+        $data = array("user" => $user, "quest" => $quest);
+
+        echo  "<pre>";
+        print_r($data);
+        echo  "</pre>";
+    }
+
 
     function handle_question($num) {
         $obj = (object)array();
