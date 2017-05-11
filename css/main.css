@@ -316,9 +316,8 @@ a.error-main-link:hover {
 
 .content-welcome {
   display: block;
-  background: #fff5ec;
-  border-left: 3px solid #fce1ca;
-  border-right: 3px solid #fce1ca;
+  background: url(/img/old-paper.jpg);
+  border-left: 5px solid #b59248;
   margin-bottom: 50px;
   padding: 20px;
   border-radius: 20px;
@@ -326,14 +325,11 @@ a.error-main-link:hover {
 
 .content-welcome-text {
   text-align: center;
-  /*width: 60%;*/
   margin: 0 auto;
-  /*padding-top: 50px;*/
 }
 
 .content-welcome-text p {
-  font-size: 1.3em;
-  padding: 10px;
+  font-size: 1.2em;
 }
 
 .content-welcome-text a {
@@ -343,7 +339,7 @@ a.error-main-link:hover {
 }
 
 .content-info {
-  font-size: 1.4em;
+  font-size: 1.2em;
   text-align: justify;
 }
 
@@ -474,16 +470,16 @@ img.puzzle {
 
 /* =========== Media CSS ========== */
 
-@media screen and (max-width: 995px) {
+@media screen and (max-width: 1366px) {
   body {
-    font-size: 99%;
+    /*font-size: 99%;*/
   }
 }
 
 @media screen and (max-width: 995px) , screen and (max-height: 780px) {
 
   body {
-    font-size: 99%;
+    font-size: 1.1em;
   }
 
   #sidebar {
@@ -496,7 +492,7 @@ img.puzzle {
     padding-top: 20px;
     padding-bottom: 20px;
   }
-
+  
   #content {
     width: calc(100vw - 220px);
   }
