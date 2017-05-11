@@ -16,6 +16,18 @@ class Controller_Main extends Controller {
         }
     }
 
+    function action_logout() {
+
+        $data = $this->model->get_user_by_session();
+
+        if ($data) {
+            $this->model->remove_user_session();
+            setcookie("uid", "", -1);
+        }
+
+        Route::redirect("/");
+    }
+
     function action_login() {
         if ($_SERVER["REQUEST_METHOD"] != "POST") {
             Route::ErrorPage405();

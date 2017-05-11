@@ -33,6 +33,15 @@ class Model {
         return ($ret && ($ret->num_rows == 1)) ? $ret->fetch_object() : null;
     }
 
+    public function remove_user_session() {
+        if (empty($_COOKIE['uid'])) {
+            return null;
+        }
+
+        $cookie = $this->escape($_COOKIE['uid']);
+        $this->mysqli->query("DELETE FROM User_Session WHERE cookie = '$cookie';");
+    }
+
     public function check_permission() {
         $data = $this->get_user_by_session();
         return $data ? !!$data->permission : false;

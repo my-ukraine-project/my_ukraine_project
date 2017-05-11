@@ -3,7 +3,7 @@
 		<div id="sidebar">
 			<img src="/img/logo.png" alt="" class="logo">
 			<div class="welcome">
-				<p>Привiт, <b>Username</b>!</p>
+				<p>Привiт, <b><?= explode(" ", $data->fio, 2)[0] ?></b>!</p>
 			</div>
 			<div class="main-menu">
 				<ul>
@@ -21,7 +21,7 @@
 				</div>
 				<p>пройдено</p>
 				<div class="logout">
-          <button type="button" class="btn btn-danger">Вийти</button>
+                    <a href="/Main/logout" class="btn btn-danger">Вийти</a>
 				</div>
 			</div>
 		</div>
