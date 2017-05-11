@@ -32,6 +32,7 @@
 
 				<div class="row">
 					<div class="col-sm-4">
+						<h2>Основна інформація</h2>
 						<p><b>Прізвище, ім'я</b></p>
 						<input type="text" class="form-control" placeholder="Username"><br>
 						<p><b>Пароль</b></p>
@@ -39,6 +40,22 @@
 						<p><b>Повторіть пароль</b></p>
 						<input type="text" class="form-control"><br>
 						<br>
+					</div>
+
+					<div class="col-sm-4">
+						<h2>Додаткова інформація</h2>
+						<p><b>Номер телефону</b></p>
+						<input type="text" class="form-control"><br>
+						<p><b>Мiсто</b></p>
+						<input type="text" class="form-control"><br>
+						<p><b>Школа</b></p>
+						<input type="text" class="form-control"><br>
+						<br>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-sm-8 text-center">
           	<button type="button" class="btn btn-success">Зберегти</button>
 					</div>
 				</div>
