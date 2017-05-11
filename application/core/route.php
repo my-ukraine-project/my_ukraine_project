@@ -12,8 +12,8 @@ class Route {
         $action_name = 'index';
 
         //разбиваем uri на страницы
-        $routes = explode('?', $_SERVER['REQUEST_URI'])[0];
-        $routes = explode('/', $routes);
+        $routes = explode('?', $_SERVER['REQUEST_URI'], 2);
+        $routes = explode('/', $routes[0]);
 
         // получаем имя контроллера, начинаем с первого, т.к. 0й элемент - dns-адрес хоста
         if (!empty($routes[1])) {
@@ -62,7 +62,7 @@ class Route {
             $controller->$action();
         } else {
             // здесь также разумнее было бы кинуть исключение
-            Route::ErrorPage404();
+//            Route::ErrorPage404();
         }
     }
 
