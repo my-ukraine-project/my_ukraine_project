@@ -86,10 +86,9 @@
                         <input class="form-control" type="text">
                         
                         <h4>Варіанти відповідей</h4>
-                        <input class="form-control" type="text" name="answer" placeholder="1 варіант"><br>
-                        <input class="form-control" type="text" name="answer" placeholder="2 варіант"><br>
-                        <input class="form-control" type="text" name="answer" placeholder="3 варіант"><br>
-                        <input class="form-control" type="text" name="answer" placeholder="4 варіант"><br>
+                        <input class="form-control" type="text" name="answer" placeholder="Введіть варіант відповіді та натисніть Додати">
+                        <input type="button" name="add" class="btn btn-default" value="Додати"><br>
+                        <div id="quest-answers"></div>
 
                     </div>
                 </div>
@@ -192,7 +191,7 @@ QuestAdd.prototype.add = function () {
         "html": [
             $("<span/>", { "text": answer.val() }),
             $("<input/>", { "type": "checkbox" }),
-            $("<input/>", { "type": "button" })
+            $("<input/>", { "type": "button", "class": "btn btn-default", "value":"Видалити" })
         ]
     }).appendTo("#quest-answers");
 
