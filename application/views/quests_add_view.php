@@ -35,72 +35,70 @@
             <div class="row">
                 <div class="col-sm-6">
 
-                <h4>Назва квесту</h4>
-                <input class="form-control" type="text">
-
-                <h4>Мета квесту</h4>
-                <textarea class="form-control" name="target" id="" cols="30" rows="10"></textarea>
-
-                <br><br>
-
-                <ul id="myTab" class="nav nav-tabs">
-                  <li class="active"><a href="#panel1">Завдання 1</a></li>
-                  <li><a href="#panel2">Завдання 2</a></li>
-                  <li><a href="#panel3">Завдання 3</a></li>
-                  <li><a href="#panel4">Завдання 4</a></li>
-                  <li><a href="#panel5">+</a></li>
-                </ul>
-
-                <div class="tab-content">
-                  <div id="panel1" class="tab-pane fade in active">
-
-                    <h4>Який елемент додаємо?</h4>
-
-                    <select class="form-control" name="content" id="typeOfTask">
-                        <option value="1">Картинку</option>
-                        <option value="2">Текст</option>
-                        <option value="3">Видео</option>
-                        <option value="4">Карту</option>
-                        <option value="5">Пазл</option>
-                    </select>
-
-                    <div id="img" style="display:block; margin-top: 30px;">
-                        <h4>Виберіть зображення</h4>
-                        <input type="file">
-                    </div>
-                    <div id="text"  style="display:none">
-                        <h4>Додайте текст</h4>
-                        <textarea class="form-control" name="" id="" cols="30" rows="10"></textarea>
-                    </div>
-                    <div id="video"  style="display:none">
-                        <h4>Додайте код відео</h4>
-                        <textarea class="form-control" name="" id="" cols="30" rows="5"></textarea>
-                    </div>
-                    <div id="map"  style="display:none">
-                        <h4>Додайте код карти</h4>
-                        <textarea class="form-control" name="" id="" cols="30" rows="5"></textarea>
-                    </div>
-                    <div id="puzzle"  style="display:none">
-                        <h4>Виберіть зображення</h4>
-                        <input type="file">
-                    </div>
-
-                    <h4>Питання</h4>
+                    <h4>Назва квесту</h4>
                     <input class="form-control" type="text">
-                    
-                    <h4>Варіанти відповідей</h4>
-                    <input class="form-control" type="text" name="answer" placeholder="1 варіант"><br>
-                    <input class="form-control" type="text" name="answer" placeholder="2 варіант"><br>
-                    <input class="form-control" type="text" name="answer" placeholder="3 варіант"><br>
-                    <input class="form-control" type="text" name="answer" placeholder="4 варіант"><br>
 
-                  </div>
+                    <h4>Мета квесту</h4>
+                    <textarea class="form-control" name="target" id="" cols="30" rows="10"></textarea>
+
+                    <br><br>
+
+                    <ul id="myTab" class="nav nav-tabs">
+                      <li id="tab1" class="tab active"><a href="#panel1">Завдання 1</a></li>
+                      <li id="addTab" class="tab"><a href="#">+</a></li>
+                    </ul>
+
+                    <div class="tab-content">
+                      <div id="panel1" class="tab-pane fade in active">
+
+                        <h4>Який елемент додаємо?</h4>
+
+                        <select class="form-control" name="content" id="typeOfTask">
+                            <option value="1">Картинку</option>
+                            <option value="2">Текст</option>
+                            <option value="3">Видео</option>
+                            <option value="4">Карту</option>
+                            <option value="5">Пазл</option>
+                        </select>
+
+                        <div id="img" style="display:block; margin-top: 30px;">
+                            <h4>Виберіть зображення</h4>
+                            <input type="file">
+                        </div>
+                        <div id="text"  style="display:none">
+                            <h4>Додайте текст</h4>
+                            <textarea class="form-control" name="" id="" cols="30" rows="10"></textarea>
+                        </div>
+                        <div id="video"  style="display:none">
+                            <h4>Додайте код відео</h4>
+                            <textarea class="form-control" name="" id="" cols="30" rows="5"></textarea>
+                        </div>
+                        <div id="map"  style="display:none">
+                            <h4>Додайте код карти</h4>
+                            <textarea class="form-control" name="" id="" cols="30" rows="5"></textarea>
+                        </div>
+                        <div id="puzzle"  style="display:none">
+                            <h4>Виберіть зображення</h4>
+                            <input type="file">
+                        </div>
+
+                        <h4>Питання</h4>
+                        <input class="form-control" type="text">
+                        
+                        <h4>Варіанти відповідей</h4>
+                        <input class="form-control" type="text" name="answer" placeholder="1 варіант"><br>
+                        <input class="form-control" type="text" name="answer" placeholder="2 варіант"><br>
+                        <input class="form-control" type="text" name="answer" placeholder="3 варіант"><br>
+                        <input class="form-control" type="text" name="answer" placeholder="4 варіант"><br>
+
+                    </div>
                 </div>
 
-                <div style="margin-top: 40px;">
-                    <input class="btn btn-primary btn-lg" type="button" name="send-form" value="Додати квест">
+                    <div style="margin-top: 40px;">
+                        <input class="btn btn-primary btn-lg" type="button" name="send-form" value="Додати квест">
+                    </div>
                 </div>
-
+            </div>
                 <div class="row">
                     <footer id="footer-dashboard">
                         <p>Поділися квестами з друзями! <i class="fa fa-arrow-down" aria-hidden="true"></i> </p>
@@ -139,6 +137,37 @@ document.getElementById("typeOfTask")
             .style.display = 0 == c || c == a ? "block" : "none"
 };
 </script>
+
+<script>
+
+    var counter = 1;
+    $( "#addTab" ).click(function() {
+        counter++;
+        $("#addTab").before('<li id="tab'+counter+'"><a href="#panel'+counter+'">Завдання '+counter+'</a></li>');
+        $("#tab"+counter).addClass("active");
+        $('#addTab').removeClass("active");
+
+        $("#tab"+counter).on("click", function(event){
+            $('#addTab').removeClass("active");
+            for (var i = 1; i <= counter; i++) {
+                if ($('#tab'+i).hasClass('active')) {
+                    $('#tab'+i).removeClass("active");
+                }
+            };
+            $(this).toggleClass('active');
+        });
+
+        for (var i = 1; i <= counter; i++) {
+            $('#panel'+i).removeClass("in active");
+        }
+
+        $('#panel'+(counter-1)).after('<div id="panel'+counter+'" class="tab-pane fade in active">fff</div>');
+
+    });
+
+</script>
+
+
 
 <!-- ========== Обработка формы =========== -->
 <script type="text/javascript">

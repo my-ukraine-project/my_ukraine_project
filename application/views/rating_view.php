@@ -30,6 +30,49 @@
 
 				<h1>Рейтинг</h1>
 
+				 <table class="table table-hover table-bordered">
+					 <thead>
+						 <tr class="success">
+						 <th>Прізвище, ім'я</th>
+						 <th>Загальні бали</th>
+						 <th>Квест 1</th>
+						 <th>Квест 2</th>
+						 <th>Квест 3</th>
+						 <th>Квест 4</th>
+						 <th>Квест 5</th>
+						 </tr>
+					 </thead>
+					 <tbody>
+						 <tr>
+							 <td>Иван</td>
+							 <td>40</td>
+							 <td>8</td>
+							 <td>8</td>
+							 <td>8</td>
+							 <td>8</td>
+							 <td>8</td>
+						 </tr>
+						 <tr>
+							 <td>Мария</td>
+							 <td>50</td>
+							 <td>10</td>
+							 <td>10</td>
+							 <td>10</td>
+							 <td>10</td>
+							 <td>10</td>
+						 </tr>
+						 <tr>
+							 <td>Юлия</td>
+							 <td>30</td>
+							 <td>6</td>
+							 <td>6</td>
+							 <td>6</td>
+							 <td>6</td>
+							 <td>6</td>
+						 </tr>
+					 </tbody>
+				 </table>
+
 				<div class="row">
 					<footer id="footer-dashboard">
 						<p>Поділися квестами з друзями! <i class="fa fa-arrow-down" aria-hidden="true"></i> </p>

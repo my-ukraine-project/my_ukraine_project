@@ -31,6 +31,19 @@
 				<h1>Налаштування</h1>
 
 				<div class="row">
+					<div class="col-sm-4">
+						<p><b>Прізвище, ім'я</b></p>
+						<input type="text" class="form-control" placeholder="Username"><br>
+						<p><b>Пароль</b></p>
+						<input type="text" class="form-control"><br>
+						<p><b>Повторіть пароль</b></p>
+						<input type="text" class="form-control"><br>
+						<br>
+          	<button type="button" class="btn btn-success">Зберегти</button>
+					</div>
+				</div>
+
+				<div class="row">
 					<footer id="footer-dashboard">
 						<p>Поділися квестами з друзями! <i class="fa fa-arrow-down" aria-hidden="true"></i> </p>
 						<div class="ya-share2" data-services="vkontakte,facebook,odnoklassniki,moimir,gplus,twitter"></div>
