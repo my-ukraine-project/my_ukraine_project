@@ -62,7 +62,7 @@ class Route {
             $controller->$action();
         } else {
             // здесь также разумнее было бы кинуть исключение
-//            Route::ErrorPage404();
+            Route::ErrorPage404();
         }
     }
 
