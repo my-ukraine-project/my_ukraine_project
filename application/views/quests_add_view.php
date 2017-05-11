@@ -34,68 +34,269 @@
 
             <div class="row">
                 <div class="col-sm-6">
-
+                    <form action="/Quests/add" method="post" enctype="multipart/form-data">
                     <h4>Назва квесту</h4>
-                    <input class="form-control" type="text">
+                    <input class="form-control" name="quest-name" type="text">
 
                     <h4>Мета квесту</h4>
-                    <textarea class="form-control" name="target" id="" cols="30" rows="10"></textarea>
+                    <textarea class="form-control" name="quest-target" cols="30" rows="10"></textarea>
 
                     <br><br>
 
                     <ul id="myTab" class="nav nav-tabs">
                       <li id="tab1" class="tab active"><a href="#panel1">Завдання 1</a></li>
-                      <li id="addTab" class="tab"><a href="#">+</a></li>
+                      <li id="tab2" class="tab"><a href="#panel2">Завдання 2</a></li>
+                      <li id="tab3" class="tab"><a href="#panel3">Завдання 3</a></li>
+                      <li id="tab4" class="tab"><a href="#panel4">Завдання 4</a></li>
+                      <li id="tab5" class="tab"><a href="#panel5">Завдання 5</a></li>
+<!--                      <li id="addTab" class="tab"><a href="#">+</a></li>-->
                     </ul>
 
                     <div class="tab-content">
-                      <div id="panel1" class="tab-pane fade in active">
+                        <div id="panel1" class="tab-pane fade in active">
 
-                        <h4>Який елемент додаємо?</h4>
+                            <h4>Який елемент додаємо?</h4>
 
-                        <select class="form-control" name="content" id="typeOfTask">
-                            <option value="1">Картинку</option>
-                            <option value="2">Текст</option>
-                            <option value="3">Видео</option>
-                            <option value="4">Карту</option>
-                            <option value="5">Пазл</option>
-                        </select>
+                            <select class="form-control" name="content1">
+                                <option value="img">Картинку</option>
+                                <option value="text">Текст</option>
+                                <option value="video">Видео</option>
+                                <option value="map">Карту</option>
+                                <option value="puzzle">Пазл</option>
+                            </select>
 
-                        <div id="img" style="display:block; margin-top: 30px;">
-                            <h4>Виберіть зображення</h4>
-                            <input type="file">
-                        </div>
-                        <div id="text"  style="display:none">
-                            <h4>Додайте текст</h4>
-                            <textarea class="form-control" name="" id="" cols="30" rows="10"></textarea>
-                        </div>
-                        <div id="video"  style="display:none">
-                            <h4>Додайте код відео</h4>
-                            <textarea class="form-control" name="" id="" cols="30" rows="5"></textarea>
-                        </div>
-                        <div id="map"  style="display:none">
-                            <h4>Додайте код карти</h4>
-                            <textarea class="form-control" name="" id="" cols="30" rows="5"></textarea>
-                        </div>
-                        <div id="puzzle"  style="display:none">
-                            <h4>Виберіть зображення</h4>
-                            <input type="file">
-                        </div>
+                            <div class="add-img" style="display:block; margin-top: 30px;">
+                                <h4>Виберіть зображення</h4>
+                                <input type="file" name="image1">
+                            </div>
+                            <div class="add-text" style="display:none">
+                                <h4>Додайте текст</h4>
+                                <textarea class="form-control" name="text1" cols="30" rows="10"></textarea>
+                            </div>
+                            <div class="add-video" style="display:none">
+                                <h4>Додайте код відео</h4>
+                                <textarea class="form-control" name="video1" cols="30" rows="5"></textarea>
+                            </div>
+                            <div class="add-map" style="display:none">
+                                <h4>Додайте код карти</h4>
+                                <textarea class="form-control" name="map1" cols="30" rows="5"></textarea>
+                            </div>
+                            <div class="add-puzzle" style="display:none">
+                                <h4>Виберіть зображення для пазлу</h4>
+                                <input type="file" name="puzzle1">
+                            </div>
 
-                        <h4>Питання</h4>
-                        <input class="form-control" type="text">
-                        
-                        <h4>Варіанти відповідей</h4>
-                        <input class="form-control" type="text" name="answer" placeholder="Введіть варіант відповіді та натисніть Додати">
-                        <input type="button" name="add" class="btn btn-default" value="Додати"><br>
-                        <div id="quest-answers"></div>
+                            <h4>Питання</h4>
+                            <input class="form-control" name="question1" type="text">
 
+                            <h4>Варіанти відповідей</h4>
+                            <input class="form-control" type="text" name="answer1-1" placeholder="Ответ 1">
+                            <input type="checkbox" name="right-answer1-1">
+                            <input class="form-control" type="text" name="answer1-2" placeholder="Ответ 2">
+                            <input type="checkbox" name="right-answer1-2">
+                            <input class="form-control" type="text" name="answer1-3" placeholder="Ответ 3">
+                            <input type="checkbox" name="right-answer1-3">
+                            <input class="form-control" type="text" name="answer1-4" placeholder="Ответ 4">
+                            <input type="checkbox" name="right-answer1-4">
+<!--                            <input class="form-control" type="text" name="answer" placeholder="Введіть варіант відповіді та натисніть Додати">-->
+<!--                            <input type="button" name="add" class="btn btn-default" value="Додати"><br>-->
+<!--                            <div class="quest-answers"></div>-->
+
+                        </div>
+                        <div id="panel2" class="tab-pane fade">
+
+                            <h4>Який елемент додаємо?</h4>
+
+                            <select class="form-control" name="content2">
+                                <option value="img">Картинку</option>
+                                <option value="text">Текст</option>
+                                <option value="video">Видео</option>
+                                <option value="map">Карту</option>
+                                <option value="puzzle">Пазл</option>
+                            </select>
+
+                            <div class="add-img" style="display:block; margin-top: 30px;">
+                                <h4>Виберіть зображення</h4>
+                                <input type="file" name="image2">
+                            </div>
+                            <div class="add-text" style="display:none">
+                                <h4>Додайте текст</h4>
+                                <textarea class="form-control" name="text2" cols="30" rows="10"></textarea>
+                            </div>
+                            <div class="add-video" style="display:none">
+                                <h4>Додайте код відео</h4>
+                                <textarea class="form-control" name="video2" cols="30" rows="5"></textarea>
+                            </div>
+                            <div class="add-map" style="display:none">
+                                <h4>Додайте код карти</h4>
+                                <textarea class="form-control" name="map2" cols="30" rows="5"></textarea>
+                            </div>
+                            <div class="add-puzzle" style="display:none">
+                                <h4>Виберіть зображення для пазлу</h4>
+                                <input type="file" name="puzzle2">
+                            </div>
+
+                            <h4>Питання</h4>
+                            <input class="form-control" name="question2" type="text">
+
+                            <h4>Варіанти відповідей</h4>
+                            <input class="form-control" type="text" name="answer2-1" placeholder="Ответ 1">
+                            <input type="checkbox" name="right-answer2-1">
+                            <input class="form-control" type="text" name="answer2-2" placeholder="Ответ 2">
+                            <input type="checkbox" name="right-answer2-2">
+                            <input class="form-control" type="text" name="answer2-3" placeholder="Ответ 3">
+                            <input type="checkbox" name="right-answer2-3">
+                            <input class="form-control" type="text" name="answer2-4" placeholder="Ответ 4">
+                            <input type="checkbox" name="right-answer2-4">
+
+                        </div>
+                        <div id="panel3" class="tab-pane fade">
+
+                            <h4>Який елемент додаємо?</h4>
+
+                            <select class="form-control" name="content3">
+                                <option value="img">Картинку</option>
+                                <option value="text">Текст</option>
+                                <option value="video">Видео</option>
+                                <option value="map">Карту</option>
+                                <option value="puzzle">Пазл</option>
+                            </select>
+
+                            <div class="add-img" style="display:block; margin-top: 30px;">
+                                <h4>Виберіть зображення</h4>
+                                <input type="file" name="image3">
+                            </div>
+                            <div class="add-text" style="display:none">
+                                <h4>Додайте текст</h4>
+                                <textarea class="form-control" name="text3" cols="30" rows="10"></textarea>
+                            </div>
+                            <div class="add-video" style="display:none">
+                                <h4>Додайте код відео</h4>
+                                <textarea class="form-control" name="video3" cols="30" rows="5"></textarea>
+                            </div>
+                            <div class="add-map" style="display:none">
+                                <h4>Додайте код карти</h4>
+                                <textarea class="form-control" name="map3" cols="30" rows="5"></textarea>
+                            </div>
+                            <div class="add-puzzle" style="display:none">
+                                <h4>Виберіть зображення для пазлу</h4>
+                                <input type="file" name="puzzle3">
+                            </div>
+
+                            <h4>Питання</h4>
+                            <input class="form-control" name="question3" type="text">
+
+                            <h4>Варіанти відповідей</h4>
+                            <input class="form-control" type="text" name="answer3-1" placeholder="Ответ 1">
+                            <input type="checkbox" name="right-answer3-1">
+                            <input class="form-control" type="text" name="answer3-2" placeholder="Ответ 2">
+                            <input type="checkbox" name="right-answer3-2">
+                            <input class="form-control" type="text" name="answer3-3" placeholder="Ответ 3">
+                            <input type="checkbox" name="right-answer3-3">
+                            <input class="form-control" type="text" name="answer3-4" placeholder="Ответ 4">
+                            <input type="checkbox" name="right-answer3-4">
+
+                        </div>
+                        <div id="panel4" class="tab-pane fade">
+
+                            <h4>Який елемент додаємо?</h4>
+
+                            <select class="form-control" name="content4">
+                                <option value="img">Картинку</option>
+                                <option value="text">Текст</option>
+                                <option value="video">Видео</option>
+                                <option value="map">Карту</option>
+                                <option value="puzzle">Пазл</option>
+                            </select>
+
+                            <div class="add-img" style="display:block; margin-top: 30px;">
+                                <h4>Виберіть зображення</h4>
+                                <input type="file" name="image4">
+                            </div>
+                            <div class="add-text" style="display:none">
+                                <h4>Додайте текст</h4>
+                                <textarea class="form-control" name="text4" cols="30" rows="10"></textarea>
+                            </div>
+                            <div class="add-video" style="display:none">
+                                <h4>Додайте код відео</h4>
+                                <textarea class="form-control" name="video4" cols="30" rows="5"></textarea>
+                            </div>
+                            <div class="add-map" style="display:none">
+                                <h4>Додайте код карти</h4>
+                                <textarea class="form-control" name="map4" cols="30" rows="5"></textarea>
+                            </div>
+                            <div class="add-puzzle" style="display:none">
+                                <h4>Виберіть зображення для пазлу</h4>
+                                <input type="file" name="puzzle4">
+                            </div>
+
+                            <h4>Питання</h4>
+                            <input class="form-control" name="question4" type="text">
+
+                            <h4>Варіанти відповідей</h4>
+                            <input class="form-control" type="text" name="answer4-1" placeholder="Ответ 1">
+                            <input type="checkbox" name="right-answer4-1">
+                            <input class="form-control" type="text" name="answer4-2" placeholder="Ответ 2">
+                            <input type="checkbox" name="right-answer4-2">
+                            <input class="form-control" type="text" name="answer4-3" placeholder="Ответ 3">
+                            <input type="checkbox" name="right-answer4-3">
+                            <input class="form-control" type="text" name="answer4-4" placeholder="Ответ 4">
+                            <input type="checkbox" name="right-answer4-4">
+
+                        </div>
+                        <div id="panel5" class="tab-pane fade">
+
+                            <h4>Який елемент додаємо?</h4>
+
+                            <select class="form-control" name="content5">
+                                <option value="img">Картинку</option>
+                                <option value="text">Текст</option>
+                                <option value="video">Видео</option>
+                                <option value="map">Карту</option>
+                                <option value="puzzle">Пазл</option>
+                            </select>
+
+                            <div class="add-img" style="display:block; margin-top: 30px;">
+                                <h4>Виберіть зображення</h4>
+                                <input type="file" name="image5">
+                            </div>
+                            <div class="add-text" style="display:none">
+                                <h4>Додайте текст</h4>
+                                <textarea class="form-control" name="text5" cols="30" rows="10"></textarea>
+                            </div>
+                            <div class="add-video" style="display:none">
+                                <h4>Додайте код відео</h4>
+                                <textarea class="form-control" name="video5" cols="30" rows="5"></textarea>
+                            </div>
+                            <div class="add-map" style="display:none">
+                                <h4>Додайте код карти</h4>
+                                <textarea class="form-control" name="map5" cols="30" rows="5"></textarea>
+                            </div>
+                            <div class="add-puzzle" style="display:none">
+                                <h4>Виберіть зображення для пазлу</h4>
+                                <input type="file" name="puzzle5">
+                            </div>
+
+                            <h4>Питання</h4>
+                            <input class="form-control" name="question5" type="text">
+
+                            <h4>Варіанти відповідей</h4>
+                            <input class="form-control" type="text" name="answer5-1" placeholder="Ответ 1">
+                            <input type="checkbox" name="right-answer5-1">
+                            <input class="form-control" type="text" name="answer5-2" placeholder="Ответ 2">
+                            <input type="checkbox" name="right-answer5-2">
+                            <input class="form-control" type="text" name="answer5-3" placeholder="Ответ 3">
+                            <input type="checkbox" name="right-answer5-3">
+                            <input class="form-control" type="text" name="answer5-4" placeholder="Ответ 4">
+                            <input type="checkbox" name="right-answer5-4">
+
+                        </div>
                     </div>
-                </div>
 
                     <div style="margin-top: 40px;">
-                        <input class="btn btn-primary btn-lg" type="button" name="send-form" value="Додати квест">
+                        <input class="btn btn-primary btn-lg" id="quest-submit" type="submit" name="quest" value="Додати квест">
                     </div>
+                    </form>
                 </div>
             </div>
                 <div class="row">
@@ -118,130 +319,184 @@
     </div>
 </div>
 
+<script src="/js/auxiliary.js"></script>
 <script src="//yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script>
 <script src="//yastatic.net/share2/share.js"></script>
 
+<!--<script type="text/template" id="template-panel">-->
+<!--</script>-->
+<!---->
+<!--<script type="text/template" id="template-tab">-->
+<!--    <li id="tab{id}"><a href="#panel{id}">Завдання {id}</a></li>-->
+<!--</script>-->
+
 <script>
-document.getElementById("typeOfTask")
-    .onchange = function () {
-        var b = {
-            1: "img",
-            2: "text",
-            3: "video",
-            4: "map",
-            5: "puzzle"
-        }, c = this.value,
-            a;
-        for (a in b) document.getElementById(b[a])
-            .style.display = 0 == c || c == a ? "block" : "none"
-};
+$(function () {
+    $("div.tab-content").on("change", "select", function (e) {
+        var b = ["img", "text", "video", "map", "puzzle"];
+
+        for (var i = 0; i < b.length; i++) {
+            var item = $(this).parent().children(".add-" + b[i]);
+            item.css({"display": $(this).val() == b[i] ? "block" : "none"});
+        }
+    });
+});
 </script>
 
 <script>
-
-    var counter = 1;
+    var counter = 0;
     $( "#addTab" ).click(function() {
         counter++;
-        $("#addTab").before('<li id="tab'+counter+'"><a href="#panel'+counter+'">Завдання '+counter+'</a></li>');
-        $("#tab"+counter).addClass("active");
-        $('#addTab').removeClass("active");
 
-        $("#tab"+counter).on("click", function(event){
+        $("#addTab").before(aux.template("template-tab", {
+            "id": counter
+        }));
+
+        $("#tab" + counter).on("click", 'a', function(e){
+            e.preventDefault();
+
             $('#addTab').removeClass("active");
             for (var i = 1; i <= counter; i++) {
-                if ($('#tab'+i).hasClass('active')) {
-                    $('#tab'+i).removeClass("active");
+                if ($('#tab'+ i).hasClass('active')) {
+                    $('#tab'+ i).removeClass("active");
                 }
-            };
+            }
             $(this).toggleClass('active');
         });
 
         for (var i = 1; i <= counter; i++) {
-            $('#panel'+i).removeClass("in active");
+            $('#panel' + i).removeClass("in active");
+
+            if ($('#tab'+ i).hasClass('active')) {
+                $('#tab'+ i).removeClass("active");
+            }
         }
 
-        $('#panel'+(counter-1)).after('<div id="panel'+counter+'" class="tab-pane fade in active">fff</div>');
+        $("#tab"+ counter).addClass("active");
+
+        $('div.tab-content').append(aux.template("template-panel", {
+            "id": counter
+        }));
 
     });
 
 </script>
 
+<!-- Для отображения табов -->
+<script type="text/javascript">
+    $(document).ready(function(){
+        $(".nav-tabs").on('click', 'a', function(e){
+            e.preventDefault();
+            $(this).tab('show');
+        });
+    });
+
+</script>
 
 
 <!-- ========== Обработка формы =========== -->
 <script type="text/javascript">
 
-function QuestAdd() {}
+//function QuestAdd() {}
+//
+//QuestAdd.prototype.run = function () {
+//    var self = this;
+//
+//    $("div.tab-content")
+//        .on("click", 'input[name=add]', self.add)
+//        .on("click", '.quest-answers input[type=button]', self.remove);
+//
+//    $("#add-quest").on("click", self.sendForm);
+//};
+//
+//QuestAdd.prototype.add = function () {
+//    var parent = $(this).parent();
+//
+//    var answer = parent.children("input[name=answer]");
+//    var answers = parent.children("div.quest-answers");
+//
+//    $('<div/>', {
+//        "class":"answer",
+//        "html": [
+//            $("<span/>", { "text": answer.val() }),
+//            $("<input/>", { "type": "checkbox" }),
+//            $("<input/>", { "type": "button", "class": "btn btn-default", "value":"Видалити" })
+//        ]
+//    }).appendTo(answers);
+//
+//};
+//
+//QuestAdd.prototype.remove = function (e) {
+//    $(this).parent("div.answer").remove();
+//};
+//
+//QuestAdd.prototype.sendForm = function () {
+//    var content = $("#content");
+//
+//    var quest = {
+//        "type": parseInt($("select").val()),
+//        "target": $("textarea[name=quest-target]").val(),
+//        "name": $("input[name=quest-name]").val(),
+//        "questions": []
+//
+//    };
+//
+//    var handle_answers = function (item) {
+//        var array = [];
+//        item.find('div.quest-answers div.answer').each(function (index, elem) {
+//            var span = $(elem).children("span");
+//            var checkbox = $(elem).children("input[type=checkbox]");
+//            array.push({ "text": span.text(), "name": ("a" + index),  "checked": checkbox.is(':checked')});
+//        });
+//        return array;
+//    };
+//
+//    var handle_attached = function (item) {
+//        var obj = { "type": item.children("select").val() };
+//
+//        if (["puzzle", "img"].indexOf(obj.type) >= 0) {
+//            obj.value = item.find("div.add-"+ obj.type +" input").val();
+//        } else if (["text", "video", "map"].indexOf(obj.type) >= 0) {
+//            obj.value = item.find("div.add-"+ obj.type +" textarea").val();
+//        }
+//
+//        return obj;
+//    };
+//
+//    $('div.tab-content div.tab-pane').each(function (i, item) {
+//        var obj = {
+//            "question": $(item).children("input[name=question]").val(),
+//            "answers": handle_answers($(item)),
+//            "attached": handle_attached($(item))
+//        };
+//
+//        quest.questions.push(obj);
+//    });
+//
+//    console.log(quest);
 
-QuestAdd.prototype.run = function () {
-    var self = this;
+//
+//    $("div.answer").each(function (index, elem) {
+//        var span = $(elem).children("span");
+//        var checkbox = $(elem).children("input[type=checkbox]");
+//        obj.answers.push({
+//            "text": span.text(),
+//            "name": ("a" + index),
+//            "checked": checkbox.is(':checked')
+//        });
+//    });
+//
+//    var jqxhr = $.post("/Quests/add", {"quest": JSON.stringify(obj) });
+//    jqxhr.done(function (data) {
+//        data = JSON.parse(data);
+//        console.log(data);
+//    });
 
-    $("input[name=add]").on("click", self.add);
-    $("input[name=send-form]").on("click", self.sendForm);
-    $("#quest-answers").on("click", "input[type=button]", self.remove);
-};
-
-QuestAdd.prototype.add = function () {
-    var answer = $("input[name=answer]");
-
-    var answers = $("div#quest-answers");
-
-    $('<div/>', {
-        "class":"answer",
-        "html": [
-            $("<span/>", { "text": answer.val() }),
-            $("<input/>", { "type": "checkbox" }),
-            $("<input/>", { "type": "button", "class": "btn btn-default", "value":"Видалити" })
-        ]
-    }).appendTo("#quest-answers");
-
-};
-
-QuestAdd.prototype.remove = function (e) {
-    $(this).parent("div.answer").remove();
-};
-
-QuestAdd.prototype.sendForm = function () {
-
-    var obj = {
-        "type": parseInt($("select").val()),
-        "target": $("textarea[name=target]").val(),
-        "content":"xxx",
-        "answers": []
-
-    };
-
-    $("div.answer").each(function (index, elem) {
-        var span = $(elem).children("span");
-        var checkbox = $(elem).children("input[type=checkbox]");
-        obj.answers.push({
-            "text": span.text(),
-            "name": ("a" + index),
-            "checked": checkbox.is(':checked')
-        });
-    });
-
-    var jqxhr = $.post("/Quests/add", {"quest": JSON.stringify(obj) });
-    jqxhr.done(function (data) {
-        data = JSON.parse(data);
-        console.log(data);
-    });
-
-};
-
-$(function () {
-    var app = new QuestAdd();
-    app.run();
-});
+//};
+//
+//$(function () {
+//    var app = new QuestAdd();
+//    app.run();
+//});
 </script>
 <!-- =========== КОНЕЦ обработки формы ========== -->
-
-<!-- Для отображения табов -->
-<script type="text/javascript">
-$(document).ready(function(){ 
-  $("#myTab a").click(function(e){
-    e.preventDefault();
-    $(this).tab('show');
-  });
-});
-</script>
