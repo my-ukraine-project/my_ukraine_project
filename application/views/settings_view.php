@@ -35,6 +35,8 @@
 						<h2>Основна інформація</h2>
 						<p><b>Прізвище, ім'я</b></p>
 						<input type="text" class="form-control" placeholder="Username"><br>
+						<p><b>E-mail</b></p>
+						<input type="text" class="form-control" placeholder="Email"><br>
 						<p><b>Пароль</b></p>
 						<input type="text" class="form-control"><br>
 						<p><b>Повторіть пароль</b></p>
@@ -56,7 +58,7 @@
 
 				<div class="row">
 					<div class="col-sm-8 text-center">
-          	<button type="button" class="btn btn-success">Зберегти</button>
+          	<button type="button" class="btn btn-success btn-lg">Зберегти</button>
 					</div>
 				</div>
 
