@@ -106,7 +106,8 @@ class Controller_Quests extends Controller {
 
         $arr = array($obj->a1->right, $obj->a2->right, $obj->a3->right, $obj->a4->right);
         $right = count(array_filter($arr, function ($item) { return !!$item; }));
-        if ($right >= 1 && $right < 4) {
+
+        if (!($right >= 1 && $right < 4)) {
             return null;
         }
 

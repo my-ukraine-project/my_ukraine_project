@@ -315,7 +315,8 @@
                 alert("Хотя бы один ответ должен быть правильным.");
                 return false;
             }
-
+            
+            return true;
         });
      });
 </script>
@@ -647,9 +648,9 @@
 <!-- НАЧАЛО обработчика формы -->
 
 <script>
- $('#quest-submit').onclick(function(){
-    alert("KUKU");
- });
+// $('#quest-submit').onclick(function(){
+//    alert("KUKU");
+// });
 </script>
 
 <!-- КОНЕЦ обработчика формы -->
