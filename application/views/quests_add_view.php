@@ -168,14 +168,15 @@
                             <input class="form-control" name="question1" type="text">
 
                             <h4>Варіанти відповідей</h4>
+                            <p style="font-style: italic;">Вкажіть правильні варіанти відповідей за допомогою чекбоксів</p>
                             <input class="form-control" type="text" name="answer1-1" placeholder="Ответ 1">
-                            <input type="checkbox" name="right-answer1-1">
+                            <input type="checkbox" name="right-answer1-1"> <br><br>
                             <input class="form-control" type="text" name="answer1-2" placeholder="Ответ 2">
-                            <input type="checkbox" name="right-answer1-2">
+                            <input type="checkbox" name="right-answer1-2"> <br><br>
                             <input class="form-control" type="text" name="answer1-3" placeholder="Ответ 3">
-                            <input type="checkbox" name="right-answer1-3">
+                            <input type="checkbox" name="right-answer1-3"> <br><br>
                             <input class="form-control" type="text" name="answer1-4" placeholder="Ответ 4">
-                            <input type="checkbox" name="right-answer1-4">
+                            <input type="checkbox" name="right-answer1-4"> <br>
 <!--                            <input class="form-control" type="text" name="answer" placeholder="Введіть варіант відповіді та натисніть Додати">-->
 <!--                            <input type="button" name="add" class="btn btn-default" value="Додати"><br>-->
 <!--                            <div class="quest-answers"></div>-->
@@ -218,14 +219,15 @@
                             <input class="form-control" name="question2" id="question-content-2" type="text">
 
                             <h4>Варіанти відповідей</h4>
+                            <p style="font-style: italic;">Вкажіть правильні варіанти відповідей за допомогою чекбоксів</p>
                             <input class="form-control" type="text" name="answer2-1" placeholder="Ответ 1">
-                            <input type="checkbox" name="right-answer2-1">
+                            <input type="checkbox" name="right-answer2-1"> <br><br>
                             <input class="form-control" type="text" name="answer2-2" placeholder="Ответ 2">
-                            <input type="checkbox" name="right-answer2-2">
+                            <input type="checkbox" name="right-answer2-2"> <br><br>
                             <input class="form-control" type="text" name="answer2-3" placeholder="Ответ 3">
-                            <input type="checkbox" name="right-answer2-3">
+                            <input type="checkbox" name="right-answer2-3"> <br><br>
                             <input class="form-control" type="text" name="answer2-4" placeholder="Ответ 4">
-                            <input type="checkbox" name="right-answer2-4">
+                            <input type="checkbox" name="right-answer2-4"> <br>
 
                         </div>
                         <div id="panel3" data-panel="3" class="tab-pane fade">
@@ -265,6 +267,7 @@
                             <input class="form-control" name="question3" id="question-content-3" type="text">
 
                             <h4>Варіанти відповідей</h4>
+                            <p style="font-style: italic;">Вкажіть правильні варіанти відповідей за допомогою чекбоксів</p>
                             <input class="form-control" type="text" name="answer3-1" placeholder="Ответ 1">
                             <input type="checkbox" name="right-answer3-1">
                             <input class="form-control" type="text" name="answer3-2" placeholder="Ответ 2">
@@ -312,6 +315,7 @@
                             <input class="form-control" name="question4" id="question-content-4"  type="text">
 
                             <h4>Варіанти відповідей</h4>
+                            <p style="font-style: italic;">Вкажіть правильні варіанти відповідей за допомогою чекбоксів</p>
                             <input class="form-control" type="text" name="answer4-1" placeholder="Ответ 1">
                             <input type="checkbox" name="right-answer4-1">
                             <input class="form-control" type="text" name="answer4-2" placeholder="Ответ 2">
@@ -359,6 +363,7 @@
                             <input class="form-control" name="question5" id="question-content-5" type="text">
 
                             <h4>Варіанти відповідей</h4>
+                            <p style="font-style: italic;">Вкажіть правильні варіанти відповідей за допомогою чекбоксів</p>
                             <input class="form-control" type="text" name="answer5-1" placeholder="Ответ 1">
                             <input type="checkbox" name="right-answer5-1">
                             <input class="form-control" type="text" name="answer5-2" placeholder="Ответ 2">

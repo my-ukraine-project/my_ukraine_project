@@ -30,35 +30,37 @@
 
 				<h1>Налаштування</h1>
 
+			<form action="" name="settings-form">
 				<div class="row">
 					<div class="col-sm-4">
 						<h2>Основна інформація</h2>
 						<p><b>Прізвище, ім'я</b></p>
-						<input type="text" class="form-control" placeholder="Username"><br>
+						<input type="text" class="form-control" name="settings-name"><br>
 						<p><b>E-mail</b></p>
-						<input type="text" class="form-control" placeholder="Email"><br>
+						<input type="text" class="form-control" name="settings-email"><br>
 						<p><b>Пароль</b></p>
-						<input type="text" class="form-control"><br>
+						<input type="text" class="form-control" placeholder="Новий пароль" name="settings-password"><br>
 						<p><b>Повторіть пароль</b></p>
-						<input type="text" class="form-control"><br>
+						<input type="text" class="form-control" placeholder="Повторіть новий пароль"  name="settings-password-repeat"><br>
 						<br>
 					</div>
 
 					<div class="col-sm-4">
 						<h2>Додаткова інформація</h2>
 						<p><b>Номер телефону</b></p>
-						<input type="text" class="form-control"><br>
+						<input type="text" class="form-control" placeholder=""  name="settings-phone"><br>
 						<p><b>Мiсто</b></p>
-						<input type="text" class="form-control"><br>
+						<input type="text" class="form-control" placeholder=""  name="settings-city"><br>
 						<p><b>Школа</b></p>
-						<input type="text" class="form-control"><br>
+						<input type="text" class="form-control" placeholder=""  name="settings-school"><br>
 						<br>
 					</div>
 				</div>
+			</form>
 
 				<div class="row">
 					<div class="col-sm-8 text-center">
-          	<button type="button" class="btn btn-success btn-lg">Зберегти</button>
+          				<input type="submit" class="btn btn-success btn-lg"></input>
 					</div>
 				</div>
 
