@@ -12,6 +12,7 @@ class Controller_Information extends Controller {
 
         if (!$data) {
             Route::redirect("/");
+            return;
         }
 
         $this->view->generate('information_view.php', 'template_view.php', $data);

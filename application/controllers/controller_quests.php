@@ -149,10 +149,10 @@ class Controller_Quests extends Controller {
     }
 
     function action_add() {
-        if (!$this->model->check_permission()) {
-            Route::ErrorPage403();
-            return;
-        }
+//        if (!$this->model->check_permission()) {
+//            Route::ErrorPage403();
+//            return;
+//        }
 
         $user = $this->model->get_user_by_session();
         $data = (object)array("user" => $user);

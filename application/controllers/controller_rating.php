@@ -12,6 +12,7 @@ class Controller_Rating extends Controller {
 
         if (!$data) {
             Route::redirect("/");
+            return;
         }
 
         $this->view->generate('rating_view.php', 'template_view.php', $data);

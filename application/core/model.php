@@ -44,7 +44,7 @@ class Model {
 
     public function check_permission() {
         $data = $this->get_user_by_session();
-        return true; //$data ? !!$data->permission : false;
+        return $data ? !!$data->permission : false;
     }
 
 }

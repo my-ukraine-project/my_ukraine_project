@@ -12,6 +12,7 @@ class Controller_Settings extends Controller {
 
         if (!$data) {
             Route::redirect("/");
+            return;
         }
 
         $this->view->generate('settings_view.php', 'template_view.php', $data);
