@@ -22,6 +22,11 @@ class Model {
             return null;
         }
 
+//        if (!empty($_SESSION['user'])) {
+//            $usr = $_SESSION['user'];
+//            return (object)array("fio" => $usr->first_name ." ". $usr->last_name);
+//        }
+
         $cookie = $this->escape($_COOKIE['uid']);
 
         $ret = $this->mysqli->query(
