@@ -30,39 +30,38 @@
 
 				<h1>Налаштування</h1>
 
-			<form action="" name="settings-form">
+			<form action="/Settings/save" name="settings-form" method="post">
 				<div class="row">
 					<div class="col-sm-4">
 						<h2>Основна інформація</h2>
 						<p><b>Прізвище, ім'я</b></p>
-						<input type="text" class="form-control" name="settings-name"><br>
+						<input type="text" class="form-control" name="settings-name" value="<?= $data->fio ?>"><br>
 						<p><b>E-mail</b></p>
-						<input type="text" class="form-control" name="settings-email"><br>
+						<input type="text" class="form-control" name="settings-email" value="<?= $data->email ?>"><br>
 						<p><b>Пароль</b></p>
-						<input type="text" class="form-control" placeholder="Новий пароль" name="settings-password"><br>
+						<input type="password" class="form-control" placeholder="Новий пароль" name="settings-password"><br>
 						<p><b>Повторіть пароль</b></p>
-						<input type="text" class="form-control" placeholder="Повторіть новий пароль"  name="settings-password-repeat"><br>
+						<input type="password" class="form-control" placeholder="Повторіть новий пароль"  name="settings-password-repeat"><br>
 						<br>
 					</div>
 
 					<div class="col-sm-4">
 						<h2>Додаткова інформація</h2>
 						<p><b>Номер телефону</b></p>
-						<input type="text" class="form-control" placeholder=""  name="settings-phone"><br>
+						<input type="text" class="form-control" placeholder=""  name="settings-phone" value="<?= $data->phone ?>"><br>
 						<p><b>Мiсто</b></p>
-						<input type="text" class="form-control" placeholder=""  name="settings-city"><br>
+						<input type="text" class="form-control" placeholder=""  name="settings-city" value="<?= $data->city ?>"><br>
 						<p><b>Школа</b></p>
-						<input type="text" class="form-control" placeholder=""  name="settings-school"><br>
+						<input type="text" class="form-control" placeholder=""  name="settings-school" value="<?= $data->school ?>"><br>
 						<br>
 					</div>
 				</div>
-			</form>
-
 				<div class="row">
 					<div class="col-sm-8 text-center">
-          				<input type="submit" class="btn btn-success btn-lg"></input>
+          				<input type="submit" name="save" class="btn btn-success btn-lg">
 					</div>
 				</div>
+            </form>
 
 				<div class="row">
 					<footer id="footer-dashboard">

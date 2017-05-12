@@ -17,6 +17,12 @@ class Model {
         return $this->mysqli->real_escape_string(trim(htmlspecialchars(trim($string))));
     }
 
+
+    public function mail_exists($email) {
+        $ret = $this->mysqli->query("SELECT * FROM Users WHERE email = '{$email}' LIMIT 1");
+        return $ret->num_rows == 1;
+    }
+
     public function get_user_by_session() {
         if (empty($_COOKIE['uid'])) {
             return null;
