@@ -44,9 +44,7 @@ class Controller_Quests extends Controller {
 
         $data = array("user" => $user, "quest" => $quest);
 
-        echo  "<pre>";
-        print_r($data);
-        echo  "</pre>";
+        $this->view->generate('quests_passing_view.php', 'template_view.php', $data);
     }
 
 
@@ -133,7 +131,7 @@ class Controller_Quests extends Controller {
 
             $hash = md5_file($file["tmp_name"]);
 
-            $obj->content = UPLOADS_DIR . DIRECTORY_SEPARATOR . $hash .".". $extension;
+            $obj->content = UPLOADS_DIR . "/" . $hash .".". $extension;
 
             if (!file_exists(UPLOADS_DIR)) {
                 mkdir(UPLOADS_DIR);
