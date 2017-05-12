@@ -16,12 +16,6 @@ class Controller_Quests extends Controller {
         }
 
         $quests = $this->model->get_quests();
-
-        $quests = array_map(function ($item) {
-            $item["data"] = json_decode($item["data"]);
-            return (object)$item;
-        }, $quests);
-
         $data = (object)array("user" => $user, "quests" => $quests);
 
         $this->view->generate('quests_view.php', 'template_view.php', $data);
@@ -40,7 +34,6 @@ class Controller_Quests extends Controller {
         }
 
         $quest = $this->model->get_quest_by_id(intval($_GET["q"]));
-        $quest->data = json_decode($quest->data);
 
         $data = array("user" => $user, "quest" => $quest);
 

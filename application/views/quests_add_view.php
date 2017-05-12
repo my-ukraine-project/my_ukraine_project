@@ -3,6 +3,7 @@
 <script type="text/javascript">
     $(document).ready(function() {
         $("#main-form").submit(function() {
+
             if($("#quest-name").val()=="") {
                 $("#quest-name").css("border", "1px solid #d61907");
                 return false;
@@ -17,306 +18,58 @@
                 $("#quest-target").css("border", "");
             }
 
-            if($(".img-content-1").val()=="") {
-                $(".img-content-1").css("border", "1px solid #d61907");
-                return false;
-            } else {
-                $(".img-content-1").css("border", "");
-            }
+            var isok = true;
 
-            if($(".img-content-2").val()=="") {
-                $(".img-content-2").css("border", "1px solid #d61907");
-                return false;
-            } else {
-                $(".img-content-2").css("border", "");
-            }
+            $(".tab-content .tab-pane").each(function (idx, e) {
+                var index = idx + 1;
+                var select = $("select[name=content"+ index +"]").val();
 
-            if($(".img-content-3").val()=="") {
-                $(".img-content-3").css("border", "1px solid #d61907");
-                return false;
-            } else {
-                $(".img-content-3").css("border", "");
-            }
+                var item = undefined;
+                if (select === "image" || select === "puzzle") {
+                    item = $("input[type=file][name="+ select + index +"]");
+                    if (item.val() === "") {
+                        item.css("border", "1px solid #d61907");
+                        isok = false;
+                        return;
+                    } else { item.css("border", ""); }
 
-            if($(".img-content-4").val()=="") {
-                $(".img-content-4").css("border", "1px solid #d61907");
-                return false;
-            } else {
-                $(".img-content-4").css("border", "");
-            }
+                } else if (select === "text" || select === "map" || select === "video") {
+                    item = $("textarea[name="+ select + index +"]");
+                    if (item.val() === "") {
+                        item.css("border", "1px solid #d61907");
+                        isok = false;
+                        return;
+                    } else { item.css("border", ""); }
+                }
 
-            if($(".img-content-5").val()=="") {
-                $(".img-content-5").css("border", "1px solid #d61907");
-                return false;
-            } else {
-                $(".img-content-5").css("border", "");
-            }
-
-            if($("#text-content-1").val()=="") {
-                $("#text-content-1").css("border", "1px solid #d61907");
-                return false;
-            } else {
-                $("#text-content-1").css("border", "");
-            }
-
-            if($("#text-content-2").val()=="") {
-                $("#text-content-2").css("border", "1px solid #d61907");
-                return false;
-            } else {
-                $("#text-content-2").css("border", "");
-            }
-
-            if($("#text-content-2").val()=="") {
-                $("#text-content-2").css("border", "1px solid #d61907");
-                return false;
-            } else {
-                $("#text-content-2").css("border", "");
-            }
-
-            if($("#text-content-3").val()=="") {
-                $("#text-content-3").css("border", "1px solid #d61907");
-                return false;
-            } else {
-                $("#text-content-3").css("border", "");
-            }
-
-            if($("#text-content-4").val()=="") {
-                $("#text-content-4").css("border", "1px solid #d61907");
-                return false;
-            } else {
-                $("#text-content-4").css("border", "");
-            }
-
-            if($("#text-content-5").val()=="") {
-                $("#text-content-5").css("border", "1px solid #d61907");
-                return false;
-            } else {
-                $("#text-content-5").css("border", "");
-            }
-
-            if($("#question-content-1").val()=="") {
-                $("#question-content-1").css("border", "1px solid #d61907");
-                return false;
-            } else {
-                $("#question-content-1").css("border", "");
-            }
-
-            if($("#question-content-2").val()=="") {
-                $("#question-content-2").css("border", "1px solid #d61907");
-                return false;
-            } else {
-                $("#question-content-2").css("border", "");
-            }
-
-            if($("#question-content-3").val()=="") {
-                $("#question-content-3").css("border", "1px solid #d61907");
-                return false;
-            } else {
-                $("#question-content-3").css("border", "");
-            }
-
-            if($("#question-content-4").val()=="") {
-                $("#question-content-4").css("border", "1px solid #d61907");
-                return false;
-            } else {
-                $("#question-content-4").css("border", "");
-            }
-
-            if($("#question-content-5").val()=="") {
-                $("#question-content-5").css("border", "1px solid #d61907");
-                return false;
-            } else {
-                $("#question-content-5").css("border", "");
-            }
+                var question = $("input[type=text][name=question"+ index +"]");
+                if (question.val() === "") {
+                    question.css("border", "1px solid #d61907");
+                    isok = false;
+                    return;
+                } else { question.css("border", ""); }
 
 
-            if($("#variant-content-1-1").val()=="") {
-                $("#variant-content-1-1").css("border", "1px solid #d61907");
-                return false;
-            } else {
-                $("#variant-content-1-1").css("border", "");
-            }
+                var array_right = [];
+                for (var i = 1; i <= 4; i++) {
+                     var answer = $("input[type=text][name=answer"+ index +"-"+ i +"]");
 
-            if($("#variant-content-1-2").val()=="") {
-                $("#variant-content-1-2").css("border", "1px solid #d61907");
-                return false;
-            } else {
-                $("#variant-content-1-2").css("border", "");
-            }
+                     if (answer.val() === "") {
+                         answer.css("border", "1px solid #d61907");
+                         isok = false;
+                         return;
+                     } else { answer.css("border", ""); }
 
-            if($("#variant-content-1-3").val()=="") {
-                $("#variant-content-1-3").css("border", "1px solid #d61907");
-                return false;
-            } else {
-                $("#variant-content-1-3").css("border", "");
-            }
+                    array_right.push($("input[type=checkbox][name=right-answer"+ index +"-"+ i +"]").is(':checked'));
+                }
 
+                if (array_right.indexOf(true) < 0) {
+                    alert("Хотя бы один ответ должен быть правильным.");
+                    isok = false;
+                }
+            });
 
-            if($("#variant-content-1-4").val()=="") {
-                $("#variant-content-1-4").css("border", "1px solid #d61907");
-                return false;
-            } else {
-                $("#variant-content-1-4").css("border", "");
-            }
-
-            if($("#variant-content-1-5").val()=="") {
-                $("#variant-content-1-5").css("border", "1px solid #d61907");
-                return false;
-            } else {
-                $("#variant-content-1-5").css("border", "");
-            }
-
-            if($("#variant-content-2-1").val()=="") {
-                $("#variant-content-2-1").css("border", "1px solid #d61907");
-                return false;
-            } else {
-                $("#variant-content-2-1").css("border", "");
-            }
-
-            if($("#variant-content-2-2").val()=="") {
-                $("#variant-content-2-2").css("border", "1px solid #d61907");
-                return false;
-            } else {
-                $("#variant-content-2-2").css("border", "");
-            }
-
-            if($("#variant-content-2-3").val()=="") {
-                $("#variant-content-2-3").css("border", "1px solid #d61907");
-                return false;
-            } else {
-                $("#variant-content-2-3").css("border", "");
-            }
-
-
-            if($("#variant-content-2-4").val()=="") {
-                $("#variant-content-2-4").css("border", "1px solid #d61907");
-                return false;
-            } else {
-                $("#variant-content-2-4").css("border", "");
-            }
-
-            if($("#variant-content-2-5").val()=="") {
-                $("#variant-content-2-5").css("border", "1px solid #d61907");
-                return false;
-            } else {
-                $("#variant-content-2-5").css("border", "");
-            }
-
-            if($("#variant-content-3-1").val()=="") {
-                $("#variant-content-3-1").css("border", "1px solid #d61907");
-                return false;
-            } else {
-                $("#variant-content-3-1").css("border", "");
-            }
-
-            if($("#variant-content-3-2").val()=="") {
-                $("#variant-content-3-2").css("border", "1px solid #d61907");
-                return false;
-            } else {
-                $("#variant-content-3-2").css("border", "");
-            }
-
-            if($("#variant-content-3-3").val()=="") {
-                $("#variant-content-3-3").css("border", "1px solid #d61907");
-                return false;
-            } else {
-                $("#variant-content-3-3").css("border", "");
-            }
-
-
-            if($("#variant-content-3-4").val()=="") {
-                $("#variant-content-3-4").css("border", "1px solid #d61907");
-                return false;
-            } else {
-                $("#variant-content-3-4").css("border", "");
-            }
-
-            if($("#variant-content-3-5").val()=="") {
-                $("#variant-content-3-5").css("border", "1px solid #d61907");
-                return false;
-            } else {
-                $("#variant-content-3-5").css("border", "");
-            }
-
-
-
-            if($("#variant-content-4-1").val()=="") {
-                $("#variant-content-4-1").css("border", "1px solid #d61907");
-                return false;
-            } else {
-                $("#variant-content-4-1").css("border", "");
-            }
-
-            if($("#variant-content-4-2").val()=="") {
-                $("#variant-content-4-2").css("border", "1px solid #d61907");
-                return false;
-            } else {
-                $("#variant-content-4-2").css("border", "");
-            }
-
-            if($("#variant-content-4-3").val()=="") {
-                $("#variant-content-4-3").css("border", "1px solid #d61907");
-                return false;
-            } else {
-                $("#variant-content-4-3").css("border", "");
-            }
-
-            if($("#variant-content-4-4").val()=="") {
-                $("#variant-content-4-4").css("border", "1px solid #d61907");
-                return false;
-            } else {
-                $("#variant-content-4-4").css("border", "");
-            }
-
-            if($("#variant-content-5-1").val()=="") {
-                $("#variant-content-5-1").css("border", "1px solid #d61907");
-                return false;
-            } else {
-                $("#variant-content-5-1").css("border", "");
-            }
-
-            if($("#variant-content-5-2").val()=="") {
-                $("#variant-content-5-2").css("border", "1px solid #d61907");
-                return false;
-            } else {
-                $("#variant-content-5-2").css("border", "");
-            }
-
-            if($("#variant-content-5-3").val()=="") {
-                $("#variant-content-5-3").css("border", "1px solid #d61907");
-                return false;
-            } else {
-                $("#variant-content-5-3").css("border", "");
-            }
-
-            if($("#variant-content-5-4").val()=="") {
-                $("#variant-content-5-4").css("border", "1px solid #d61907");
-                return false;
-            } else {
-                $("#variant-content-5-4").css("border", "");
-            }
-
-            if(!$("#right-answer1-1").is(':checked') || !$("#right-answer1-2").is(':checked') || !$("#right-answer1-3").is(':checked') || !$("#right-answer1-4").is(':checked')) {
-                alert("Хотя бы один ответ должен быть правильным.");
-                return false;
-            }
-
-            if(!$("#right-answer2-1").is(':checked') || !$("#right-answer2-2").is(':checked') || !$("#right-answer2-3").is(':checked') || !$("#right-answer2-4").is(':checked')) {
-                alert("Хотя бы один ответ должен быть правильным.");
-                return false;
-            }
-
-            if(!$("#right-answer3-1").is(':checked') || !$("#right-answer3-2").is(':checked') || !$("#right-answer3-3").is(':checked') || !$("#right-answer3-4").is(':checked')) {
-                alert("Хотя бы один ответ должен быть правильным.");
-                return false;
-            }
-
-            if(!$("#right-answer4-1").is(':checked') || !$("#right-answer4-2").is(':checked') || !$("#right-answer4-3").is(':checked') || !$("#right-answer4-4").is(':checked')) {
-                alert("Хотя бы один ответ должен быть правильным.");
-                return false;
-            }
-            
-            return true;
+            return isok;
         });
      });
 </script>
@@ -378,7 +131,7 @@
                     </ul>
 
                     <div class="tab-content">
-                        <div id="panel1" class="tab-pane fade in active">
+                        <div id="panel1" data-panel="1" class="tab-pane fade in active">
 
                             <h4>Який елемент додаємо?</h4>
 
@@ -392,11 +145,11 @@
 
                             <div class="add-image" style="display:block; margin-top: 30px;">
                                 <h4>Виберіть зображення</h4>
-                                <input type="file" name="image1" class="img-content-1">
+                                <input type="file" name="image1">
                             </div>
                             <div class="add-text" style="display:none">
                                 <h4>Додайте текст</h4>
-                                <textarea class="form-control" name="text1" class="text-content-1" cols="30" rows="10"></textarea>
+                                <textarea class="form-control" name="text1" cols="30" rows="10"></textarea>
                             </div>
                             <div class="add-video" style="display:none">
                                 <h4>Додайте код відео</h4>
@@ -412,23 +165,23 @@
                             </div>
 
                             <h4>Питання</h4>
-                            <input class="form-control" name="question1" id="question-content-1" type="text">
+                            <input class="form-control" name="question1" type="text">
 
                             <h4>Варіанти відповідей</h4>
-                            <input class="form-control" type="text" name="answer1-1" id="variant-content-1-1" placeholder="Ответ 1">
-                            <input type="checkbox" name="right-answer1-1" id="right-answer1-1">
-                            <input class="form-control" type="text" name="answer1-2" id="variant-content-1-2" placeholder="Ответ 2">
-                            <input type="checkbox" name="right-answer1-2" id="right-answer1-2">
-                            <input class="form-control" type="text" name="answer1-3" id="variant-content-1-3" placeholder="Ответ 3">
-                            <input type="checkbox" name="right-answer1-3" id="right-answer1-3">
-                            <input class="form-control" type="text" name="answer1-4" id="variant-content-1-4" placeholder="Ответ 4">
-                            <input type="checkbox" name="right-answer1-4" id="right-answer1-4">
+                            <input class="form-control" type="text" name="answer1-1" placeholder="Ответ 1">
+                            <input type="checkbox" name="right-answer1-1">
+                            <input class="form-control" type="text" name="answer1-2" placeholder="Ответ 2">
+                            <input type="checkbox" name="right-answer1-2">
+                            <input class="form-control" type="text" name="answer1-3" placeholder="Ответ 3">
+                            <input type="checkbox" name="right-answer1-3">
+                            <input class="form-control" type="text" name="answer1-4" placeholder="Ответ 4">
+                            <input type="checkbox" name="right-answer1-4">
 <!--                            <input class="form-control" type="text" name="answer" placeholder="Введіть варіант відповіді та натисніть Додати">-->
 <!--                            <input type="button" name="add" class="btn btn-default" value="Додати"><br>-->
 <!--                            <div class="quest-answers"></div>-->
 
                         </div>
-                        <div id="panel2" class="tab-pane fade">
+                        <div id="panel2" data-panel="2" class="tab-pane fade">
 
                             <h4>Який елемент додаємо?</h4>
 
@@ -465,17 +218,17 @@
                             <input class="form-control" name="question2" id="question-content-2" type="text">
 
                             <h4>Варіанти відповідей</h4>
-                            <input class="form-control" type="text" name="answer2-1" id="variant-content-2-1" placeholder="Ответ 1">
-                            <input type="checkbox" name="right-answer2-1" id="right-answer2-1">
-                            <input class="form-control" type="text" name="answer2-2" id="variant-content-2-2" placeholder="Ответ 2">
-                            <input type="checkbox" name="right-answer2-2" id="right-answer2-2">
-                            <input class="form-control" type="text" name="answer2-3" id="variant-content-2-3" placeholder="Ответ 3">
-                            <input type="checkbox" name="right-answer2-3" id="right-answer2-3">
-                            <input class="form-control" type="text" name="answer2-4" id="variant-content-2-4" placeholder="Ответ 4">
-                            <input type="checkbox" name="right-answer2-4" id="right-answer2-4">
+                            <input class="form-control" type="text" name="answer2-1" placeholder="Ответ 1">
+                            <input type="checkbox" name="right-answer2-1">
+                            <input class="form-control" type="text" name="answer2-2" placeholder="Ответ 2">
+                            <input type="checkbox" name="right-answer2-2">
+                            <input class="form-control" type="text" name="answer2-3" placeholder="Ответ 3">
+                            <input type="checkbox" name="right-answer2-3">
+                            <input class="form-control" type="text" name="answer2-4" placeholder="Ответ 4">
+                            <input type="checkbox" name="right-answer2-4">
 
                         </div>
-                        <div id="panel3" class="tab-pane fade">
+                        <div id="panel3" data-panel="3" class="tab-pane fade">
 
                             <h4>Який елемент додаємо?</h4>
 
@@ -512,17 +265,17 @@
                             <input class="form-control" name="question3" id="question-content-3" type="text">
 
                             <h4>Варіанти відповідей</h4>
-                            <input class="form-control" type="text" name="answer3-1" id="variant-content-3-1" placeholder="Ответ 1">
-                            <input type="checkbox" name="right-answer3-1" id="right-answer3-1">
-                            <input class="form-control" type="text" name="answer3-2" id="variant-content-3-2" placeholder="Ответ 2">
-                            <input type="checkbox" name="right-answer3-2" id="right-answer3-2">
-                            <input class="form-control" type="text" name="answer3-3" id="variant-content-3-3" placeholder="Ответ 3">
-                            <input type="checkbox" name="right-answer3-3" id="right-answer3-3">
-                            <input class="form-control" type="text" name="answer3-4" id="variant-content-3-4" placeholder="Ответ 4">
-                            <input type="checkbox" name="right-answer3-4" id="right-answer3-4">
+                            <input class="form-control" type="text" name="answer3-1" placeholder="Ответ 1">
+                            <input type="checkbox" name="right-answer3-1">
+                            <input class="form-control" type="text" name="answer3-2" placeholder="Ответ 2">
+                            <input type="checkbox" name="right-answer3-2">
+                            <input class="form-control" type="text" name="answer3-3" placeholder="Ответ 3">
+                            <input type="checkbox" name="right-answer3-3">
+                            <input class="form-control" type="text" name="answer3-4" placeholder="Ответ 4">
+                            <input type="checkbox" name="right-answer3-4">
 
                         </div>
-                        <div id="panel4" class="tab-pane fade">
+                        <div id="panel4" data-panel="4" class="tab-pane fade">
 
                             <h4>Який елемент додаємо?</h4>
 
@@ -559,17 +312,17 @@
                             <input class="form-control" name="question4" id="question-content-4"  type="text">
 
                             <h4>Варіанти відповідей</h4>
-                            <input class="form-control" type="text" name="answer4-1" id="variant-content-4-1" placeholder="Ответ 1">
-                            <input type="checkbox" name="right-answer4-1" id="right-answer4-1">
-                            <input class="form-control" type="text" name="answer4-2" id="variant-content-4-2" placeholder="Ответ 2">
-                            <input type="checkbox" name="right-answer4-2" id="right-answer4-2">
-                            <input class="form-control" type="text" name="answer4-3" id="variant-content-4-3" placeholder="Ответ 3">
-                            <input type="checkbox" name="right-answer4-3" id="right-answer4-3">
-                            <input class="form-control" type="text" name="answer4-4" id="variant-content-4-4" placeholder="Ответ 4">
-                            <input type="checkbox" name="right-answer4-4" id="right-answer4-4">
+                            <input class="form-control" type="text" name="answer4-1" placeholder="Ответ 1">
+                            <input type="checkbox" name="right-answer4-1">
+                            <input class="form-control" type="text" name="answer4-2" placeholder="Ответ 2">
+                            <input type="checkbox" name="right-answer4-2">
+                            <input class="form-control" type="text" name="answer4-3" placeholder="Ответ 3">
+                            <input type="checkbox" name="right-answer4-3">
+                            <input class="form-control" type="text" name="answer4-4" placeholder="Ответ 4">
+                            <input type="checkbox" name="right-answer4-4">
 
                         </div>
-                        <div id="panel5" class="tab-pane fade">
+                        <div id="panel5" data-panel="5" class="tab-pane fade">
 
                             <h4>Який елемент додаємо?</h4>
 
@@ -606,13 +359,13 @@
                             <input class="form-control" name="question5" id="question-content-5" type="text">
 
                             <h4>Варіанти відповідей</h4>
-                            <input class="form-control" type="text" name="answer5-1" id="variant-content-5-1" placeholder="Ответ 1">
+                            <input class="form-control" type="text" name="answer5-1" placeholder="Ответ 1">
                             <input type="checkbox" name="right-answer5-1">
-                            <input class="form-control" type="text" name="answer5-2" id="variant-content-5-2" placeholder="Ответ 2">
+                            <input class="form-control" type="text" name="answer5-2" placeholder="Ответ 2">
                             <input type="checkbox" name="right-answer5-2">
-                            <input class="form-control" type="text" name="answer5-3" id="variant-content-5-3" placeholder="Ответ 3">
+                            <input class="form-control" type="text" name="answer5-3" placeholder="Ответ 3">
                             <input type="checkbox" name="right-answer5-3">
-                            <input class="form-control" type="text" name="answer5-4" id="variant-content-5-4" placeholder="Ответ 4">
+                            <input class="form-control" type="text" name="answer5-4" placeholder="Ответ 4">
                             <input type="checkbox" name="right-answer5-4">
 
                         </div>
