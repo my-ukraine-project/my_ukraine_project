@@ -36,7 +36,7 @@
         }
 
         function addMarker(location) {
-            var image = './marker.png';
+            var image = '/img/marker.png';
             var marker = new google.maps.Marker({
                 position: location,
                 map: map,
