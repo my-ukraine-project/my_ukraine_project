@@ -209,7 +209,7 @@
 		<div id="sidebar">
 			<img src="/img/logo.png" alt="" class="logo">
 			<div class="welcome">
-				<p>Привiт, <b><?php $var = explode(" ", $data->user->fio, 2); echo $var[0]; ?></b>!</p>
+				<p>Привiт, <b><?php $var = explode(" ", $data->fio, 2); echo $var[0]; ?></b>!</p>
 			</div>
 			<div class="main-menu">
 				<ul>
