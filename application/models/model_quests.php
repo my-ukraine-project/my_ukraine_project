@@ -36,7 +36,10 @@ class Model_Quests extends Model {
         }
 
         $quest = (object)$ret->fetch_assoc();
-        $quest->data = json_decode(base64_decode($quest->data));
-        return $quest;
+        $obj = json_decode(base64_decode($quest->data));
+        $obj->id = $quest->id;
+        $obj->uid = $quest->user_id;
+
+        return $obj;
     }
 }
