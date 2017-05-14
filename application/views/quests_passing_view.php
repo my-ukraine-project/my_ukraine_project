@@ -65,7 +65,7 @@
 
                         <input type="text" name="qid" value="<?= $quest->id ?>" hidden>
                     <!--    <div class="tab-content">-->
-                        <?php $cnt = 1; foreach ($quest->questions as $question) { $cnt++;
+                        <?php $cnt = 0; foreach ($quest->questions as $question) { $cnt++;
                             ?><div class="alert alert-success"><?php
                                 $atype = count_right($question) > 1 ? "checkbox" : "radio";
 
@@ -101,6 +101,24 @@
                     </form>
 
 
+                </div>
+
+                <div class="row">
+                        <hr>
+                            <p style="font-size: 2em; color: #ccc;">Коментарi</p>
+                        <hr>
+                    <div id="mc-container"></div>
+                    <script type="text/javascript">
+                    cackle_widget = window.cackle_widget || [];
+                    cackle_widget.push({widget: 'Comment', id: 52905});
+                    (function() {
+                        var mc = document.createElement('script');
+                        mc.type = 'text/javascript';
+                        mc.async = true;
+                        mc.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://cackle.me/widget.js';
+                        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+                    })();
+                    </script>
                 </div>
 
 				<div class="row">
