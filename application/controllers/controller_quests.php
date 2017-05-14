@@ -45,34 +45,41 @@ class Controller_Quests extends Controller {
         $obj = (object)array();
 
         if (empty($_POST["content". $num])) {
+            echo "empty(\$_POST[\"content$num\"])";
             return null;
         }
 
         $obj->type = $_POST["content". $num];
 
         if (empty($_POST["question". $num])) {
+            echo "empty(\$_POST[\"question$num\"])";
             return null;
         }
 
         $obj->question = $_POST["question". $num];
 
         if (!in_array($obj->type, array("text", "video", "map", "image", "puzzle"))) {
+            echo "Unknown content type!";
             return null;
         }
 
         if (!isset($_POST["answer". $num ."-1"]) || empty($_POST["answer". $num ."-1"])) {
+            echo "answer$num-1 not set or empty";
             return null;
         }
 
         if (!isset($_POST["answer". $num ."-2"]) || empty($_POST["answer". $num ."-2"])) {
+            echo "answer$num-2 not set or empty";
             return null;
         }
 
         if (!isset($_POST["answer". $num ."-3"]) || empty($_POST["answer". $num ."-3"])) {
+            echo "answer$num-3 not set or empty";
             return null;
         }
 
         if (!isset($_POST["answer". $num ."-4"]) || empty($_POST["answer". $num ."-4"])) {
+            echo "answer$num-4 not set or empty";
             return null;
         }
 
@@ -99,6 +106,7 @@ class Controller_Quests extends Controller {
         $right = count(array_filter($arr, function ($item) { return !!$item; }));
 
         if (!($right >= 1 && $right < 4)) {
+            echo "Правильных ответов должно быть больше одного но меньше 4х";
             return null;
         }
 
@@ -110,15 +118,19 @@ class Controller_Quests extends Controller {
             $file = $_FILES[$obj->type . $num];
 
             if ($file["size"] > MAX_IMAGE_FILE_SIZE) {
+                echo "Максимально допустимый вес изображения ". MAX_IMAGE_FILE_SIZE ." (bytes)";
                 return null;
             }
 
             if (!in_array($file["type"], array("image/png", "image/gif", "image/jpeg"))) {
+                echo "Изображение не соответствует ни одному из поддерживаемых форматов image/png, image/gif, image/jpeg.";
                 return null;
             }
 
             $extension = pathinfo(basename($file["name"]),PATHINFO_EXTENSION);
-            if (!in_array($extension, array("jpeg", "jpg", "png", "gif"))) {
+            if (!in_array(strtolower($extension), array("jpeg", "jpg", "png", "gif"))) {
+                echo $file["name"];
+                echo "Изображение не поддерживается: поддерживаемые \"jpeg\", \"jpg\", \"png\", \"gif\".";
                 return null;
             }
 
@@ -157,10 +169,12 @@ class Controller_Quests extends Controller {
         $quest = (object)array("questions" => array());
 
         if (empty($_POST["quest-name"])) {
+            echo 'empty($_POST["quest-name"])';
             return;
         }
 
         if (empty($_POST["quest-target"])) {
+            echo 'empty($_POST["quest-target"])';
             return;
         }
 

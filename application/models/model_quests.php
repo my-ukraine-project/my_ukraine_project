@@ -5,6 +5,9 @@ class Model_Quests extends Model {
     public function add_quest($user, $object) {
         $quest = base64_encode(json_encode($object));
         $ret = $this->mysqli->query("INSERT INTO Quests (data, user_id) VALUE ('$quest', $user->id)");
+
+        echo "mysqli_error: ". mysqli_error($this->mysqli);
+
         return $ret && ($this->mysqli->affected_rows == 1);
     }
 

@@ -6,8 +6,6 @@ class Model_Settings extends Model {
 
         $p = sha1($password);
 
-
-
         $this->mysqli->autocommit(false);
 
         $ret = $this->mysqli->query("
