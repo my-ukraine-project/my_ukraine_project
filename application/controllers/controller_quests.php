@@ -34,6 +34,10 @@ class Controller_Quests extends Controller {
         }
 
         $quest = $this->model->get_quest_by_id(intval($_GET["q"]));
+        if (!$quest) {
+            Route::ErrorPage404();
+            return;
+        }
 
         $data = array("user" => $user, "quest" => $quest);
 

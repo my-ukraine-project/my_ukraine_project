@@ -29,6 +29,7 @@ class Model_Quests extends Model {
 
 
     public function get_quest_by_id($id) {
+
         $ret = $this->mysqli->query(
             "SELECT q.*, u.fio FROM
                     Quests AS q JOIN Users AS u ON q.user_id = u.id
@@ -38,7 +39,12 @@ class Model_Quests extends Model {
             return null;
         }
 
-        $quest = (object)$ret->fetch_assoc();
+        $quest = $ret->fetch_assoc();
+        if (empty($quest)) {
+            return null;
+        }
+
+        $quest = (object)$quest;
         $obj = json_decode(base64_decode($quest->data));
         $obj->id = $quest->id;
         $obj->uid = $quest->user_id;
