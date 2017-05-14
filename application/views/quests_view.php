@@ -55,18 +55,13 @@
 										<span><b>Додав квест:</b> <?= $quest->fio ?></span>
 									</div>
 
-									<div style="float: right; width: 100px;
-												height: 100px;
-												border: 1px solid #eb761f;
-												background: #fff;
-												text-align: center;
-												font-size: 2em;
-												color: #eb761f;
-												font-weight: bold;
+									<div style="float: right;
 												padding-top: 30px;
-												-moz-border-radius: 50px;
-												-webkit-border-radius: 50px;
-												border-radius: 50px;">
+												padding-right: 30px;
+												text-align: center;
+												font-size: 3em;
+												color: #eb761f;
+												font-weight: bold;">
 										<?= $counter ?>
 									</div>
 								</div>

@@ -118,3 +118,5 @@
 
 <script src="//yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script>
 <script src="//yastatic.net/share2/share.js"></script>
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDivmZHbm2P1MFI278_IWoKxSy59UeNOnY&callback=initMap"></script>
