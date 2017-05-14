@@ -114,6 +114,7 @@
             <div class="row">
                 <div class="col-sm-6">
                     <form action="/Quests/add" method="post" enctype="multipart/form-data" id="main-form" name="main-form">
+                    <input name="quest-id" type="text" value="<?= $data->quest->id ?>" hidden>
                     <h4>Назва квесту</h4>
                     <input class="form-control" name="quest-name" id="quest-name" type="text" value="<?= $data->quest->name ?>">
 

@@ -156,7 +156,7 @@ class Controller_Quests extends Controller {
         return $obj;
     }
 
-    function action_add() {
+    public function action_add() {
 //        if (!$this->model->check_permission()) {
 //            Route::ErrorPage403();
 //            return;
@@ -221,13 +221,42 @@ class Controller_Quests extends Controller {
             return;
         }
 
-        $data = $this->model->get_user_by_session();
+        if (!isset($_POST["quest-id"]) || empty($_POST["quest-id"]) || !is_numeric($_POST["quest-id"])) {
 
-        if (!$this->model->add_quest($data, $quest)) {
-            echo json_encode(array("status" => false, "msg" => "Ошибка при записи в бд!"));
+            $data = $this->model->get_user_by_session();
+
+            if (!$this->model->add_quest($data, $quest)) {
+                echo json_encode(array("status" => false, "msg" => "Ошибка при записи в бд!"));
+                return;
+            }
+
+            Route::redirect("/Quests/add");
+
+        } else {
+            $qid = intval($_POST["quest-id"]);
+
+            if (!$this->model->update($qid, $quest)) {
+                echo json_encode(array("status" => false, "msg" => "Ошибка при записи в бд!"));
+                return;
+            }
+
+            Route::redirect("/Quests/passing?q=$qid");
+        }
+    }
+
+    public function action_pass() {
+        if ($_SERVER["REQUEST_METHOD"] != "POST") {
+            Route::ErrorPage405();
             return;
         }
 
-        Route::redirect("/Quests/add");
+        if (!isset($_POST["qid"]) || empty($_POST["qid"]) || !is_numeric($_POST["qid"])) {
+            return;
+        }
+
+        $quest = $this->model->get_quest_by_id(intval($_POST["qid"]));
+
+
+
     }
 }

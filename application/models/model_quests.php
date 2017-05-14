@@ -11,6 +11,15 @@ class Model_Quests extends Model {
         return $ret && ($this->mysqli->affected_rows == 1);
     }
 
+    public function update($qid, $object) {
+        $quest = base64_encode(json_encode($object));
+        $ret = $this->mysqli->query("UPDATE Quests SET data = '$quest' WHERE id = $qid");
+
+        echo "mysqli_error: ". mysqli_error($this->mysqli);
+
+        return $ret && ($this->mysqli->affected_rows == 1);
+    }
+
     public function get_quests() {
         $ret = $this->mysqli->query(
         "SELECT q.*, u.fio FROM

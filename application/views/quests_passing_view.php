@@ -65,7 +65,7 @@
 
                         <input type="text" name="qid" value="<?= $quest->id ?>" hidden>
                     <!--    <div class="tab-content">-->
-                        <?php foreach ($quest->questions as $question) {
+                        <?php $cnt = 1; foreach ($quest->questions as $question) { $cnt++;
                             ?><div class="alert alert-success"><?php
                                 $atype = count_right($question) > 1 ? "checkbox" : "radio";
 
@@ -82,11 +82,17 @@
                                 <?php }?>
 
                                 <p style="margin-top: 20px; margin-bottom: 20px; font-size: 1.2em; font-weight: bold;"><?= $question->question ?></p>
-
-                                <p><input type="<?= $atype ?>" name="a1"> <label for="a1"> <?= $question->a1->text ?></label></p>
-                                <p><input type="<?= $atype ?>" name="a2"> <label for="a2"> <?= $question->a2->text ?></label></p>
-                                <p><input type="<?= $atype ?>" name="a3"> <label for="a3"> <?= $question->a3->text ?></label></p>
-                                <p><input type="<?= $atype ?>" name="a4"> <label for="a4"> <?= $question->a4->text ?></label></p>
+                                <?php if ($atype == "radio") { ?>
+                                    <p><input type="radio" name="answer<?= $cnt ?>" value="1"> <label><?= $question->a1->text ?></label></p>
+                                    <p><input type="radio" name="answer<?= $cnt ?>" value="2"> <label><?= $question->a2->text ?></label></p>
+                                    <p><input type="radio" name="answer<?= $cnt ?>" value="3"> <label><?= $question->a3->text ?></label></p>
+                                    <p><input type="radio" name="answer<?= $cnt ?>" value="4"> <label><?= $question->a4->text ?></label></p>
+                                <?php } else { ?>
+                                    <p><input type="checkbox" name="a1"> <label><?= $question->a1->text ?></label></p>
+                                    <p><input type="checkbox" name="a2"> <label><?= $question->a2->text ?></label></p>
+                                    <p><input type="checkbox" name="a3"> <label><?= $question->a3->text ?></label></p>
+                                    <p><input type="checkbox" name="a4"> <label><?= $question->a4->text ?></label></p>
+                                <?php } ?>
 
                             </div>
                         <?php } ?>
