@@ -35,24 +35,28 @@
 				</div>
 
                 <div class="row">
-<?php
 
-if (empty($data->quests)) {
-    ?><h3> Ще не додано жодного квесту, зробіть це прямо зараз! </h3><?php
-} else {
 
-foreach ($data->quests as $quest) { ?>
-    <div class="quest">
-        <a href="/Quests/passing?q=<?= $quest->id ?>"><h5><?= $quest->data->name ?></h5></a>
-        <p><?= $quest->data->target ?></p>
-        <span><?= $quest->fio ?></span>
-    </div>
+				<?php
 
-<?php }
+				if (empty($data->quests)) {
+					?><h3> Ще не додано жодного квесту, зробіть це прямо зараз! </h3><?php
+				} else {
 
-}
+				foreach ($data->quests as $quest) { ?>
+					<div class="quest alert alert-warning">
+						<a href="/Quests/passing?q=<?= $quest->id ?>"><h3> <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> <?= $quest->data->name ?></h3></a><br>
+						<p><b>Мета квесту:</b> <?= $quest->data->target ?></p><br>
+						<span><b>Додав квест:</b> <?= $quest->fio ?></span>
+					</div>
 
-?>
+				<?php }
+
+				}
+
+				?>
+
+
                 </div>
 
 				<div class="row">

@@ -467,6 +467,39 @@ img.puzzle {
   min-width: 320px;
   width: auto;
 }
+/* =========== END Quests Page ===========*/
+
+/* ========== Вывод квестов ========== */
+
+.quest h3 {
+  padding: 10px 0 10px;
+  margin: 0;
+}
+
+.quest a {
+  color: #b59248;
+  font-weight: bold;
+}
+
+.quest a:hover {
+  text-decoration: none;
+  color: #eb761f;
+}
+
+.quest p {
+  font-size: 1.2em;
+}
+
+a.back-link {
+  color: #f1f1f1;
+}
+
+a.back-link:hover {
+  color: #fff;
+}
+
+/* ========== КОНЕЦ Вывод квестов ========== */
+
 
 /* =========== Media CSS ========== */
 
