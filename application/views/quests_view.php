@@ -53,6 +53,11 @@
 										<a href="/Quests/passing?q=<?= $quest->id ?>"><h3> <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> <?= $quest->data->name ?></h3></a><br>
 										<p><b>Мета квесту:</b> <?= $quest->data->target ?></p><br>
 										<span><b>Додав квест:</b> <?= $quest->fio ?></span>
+                                        <div class="quest-content">
+                                            <?php foreach ($quest->data->questions as $question) {
+                                                ?><span class="type-<?= $question->type ?>"></span><?php
+                                            } ?>
+                                        </div>
 									</div>
 
 									<div style="float: right;
