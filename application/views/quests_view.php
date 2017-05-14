@@ -51,16 +51,16 @@
 								<div class="row">
 									<div style="float: left;">
 										<a href="/Quests/passing?q=<?= $quest->id ?>"><h3> <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> <?= $quest->data->name ?></h3></a><br>
-										<p><b>Мета квесту:</b> <?= $quest->data->target ?></p><br>
-										<p><b>Додав квест:</b> <?= $quest->fio ?></p>
-										
-                                        <div class="quest-content">
+										<p><b>Мета квесту:</b> <?= $quest->data->target ?></p>
+										<div class="quest-content">
 											<br>
-											<b>Содержимое квеста:</b>
+											<p><b>Содержимое квеста:</b></p>
                                             <?php foreach ($quest->data->questions as $question) {
                                                 ?><span style="margin-right: 10px;" class="type-<?= $question->type ?>"></span><?php
                                             } ?>
                                         </div>
+										<br>
+										<p style="text-align: right;"><b>Додав квест:</b> <?= $quest->fio ?></p>
 
 									</div>
 
