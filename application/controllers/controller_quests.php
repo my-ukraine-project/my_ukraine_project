@@ -163,11 +163,33 @@ class Controller_Quests extends Controller {
 //        }
 
         $user = $this->model->get_user_by_session();
-        $data = (object)array("user" => $user);
 
-        if ($_SERVER["REQUEST_METHOD"] != "POST") {
+        if (!$user) {
+            Route::redirect("/");
+            return;
+        }
+
+
+        if ($_SERVER["REQUEST_METHOD"] != "POST" && !isset($_GET["edit"])) {
+            $data = (object)array("user" => $user);
             $this->view->generate('quests_add_view.php', 'template_view.php', $data);
             return;
+        } else if ($_SERVER["REQUEST_METHOD"] != "POST" && isset($_GET["edit"])) {
+
+            if (!isset($_GET["edit"]) || empty($_GET["edit"]) || !is_numeric($_GET["edit"])) {
+                Route::ErrorPage404();
+                return;
+            }
+
+            $q_object = $this->model->get_quest_by_id(intval($_GET["edit"]));
+
+            if (empty($q_object)) {
+                Route::ErrorPage404();
+            }
+
+            $data = (object)array("user" => $user, "quest" => $q_object);
+
+            $this->view->generate('quests_edit_view.php', 'template_view.php', $data);
         }
 
         $quest = (object)array("questions" => array());

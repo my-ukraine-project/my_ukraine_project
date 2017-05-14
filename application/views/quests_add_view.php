@@ -433,9 +433,11 @@ $(function () {
 
         for (var i = 0; i < b.length; i++) {
             var item = $(this).parent().children(".add-" + b[i]);
-            item.css({"display": $(this).val() == b[i] ? "block" : "none"});
+            item.css({"display": $(this).val() === b[i] ? "block" : "none"});
         }
     });
+
+    $("div.tab-content select").trigger("change");
 });
 </script>
 

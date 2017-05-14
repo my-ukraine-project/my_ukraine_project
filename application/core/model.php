@@ -53,6 +53,10 @@ class Model {
         $this->mysqli->query("DELETE FROM User_Session WHERE cookie = '$cookie';");
     }
 
+    public function get_progress($uid) {
+
+    }
+
     public function check_permission() {
         $data = $this->get_user_by_session();
         return $data ? !!$data->permission : false;
