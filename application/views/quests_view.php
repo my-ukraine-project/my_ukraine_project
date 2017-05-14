@@ -30,8 +30,8 @@
 			<div class="container-fluid">
 
 				<div class="row">
-					<div class="col-sm-10"><h1>Квести</h1></div>
-					<div class="col-sm-2"><a class="btn btn-danger" href="/Quests/add" style="margin-top: 40px;">Додати квест</a></div>
+					<div class="col-sm-9"><h1>Квести</h1></div>
+					<div class="col-sm-3"><a class="btn btn-danger" href="/Quests/add" style="margin-top: 40px; margin-bottom: 20px; float: right; display: block;">Додати квест</a></div>
 				</div>
 
                 <div class="row">
