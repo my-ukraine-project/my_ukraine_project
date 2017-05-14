@@ -75,10 +75,9 @@
                                 <?php } else if ($question->type === "text") { ?>
                                     <p><?= $question->content ?></p>
                                 <?php } else if ($question->type === "video") { ?>
-                                    <!-- $question->content -- содержит то что было вставлено в textarea -->
-                                    <h4>Here must be video</h4>
+                                    <div class="quest-video"><?= $question->content ?></div>
                                 <?php } else if ($question->type === "map") { ?>
-                                    <h4>Here must be map</h4>
+                                    <div class="quest-map"><?= $question->content ?></div>
                                 <?php }?>
 
                                 <p style="margin-top: 20px; margin-bottom: 20px; font-size: 1.2em; font-weight: bold;"><?= $question->question ?></p>
