@@ -500,6 +500,35 @@ a.back-link:hover, a.edit-link:hover {
   color: #fff;
 }
 
+.quest-content span {
+  font-size: 2em;
+  display: inline-block;
+}
+
+.type-text:before  {
+  content: "\f0f6"; 
+  font-family: FontAwesome;
+}
+
+.type-image:before  {
+  content: "\f1c5"; 
+  font-family: FontAwesome;
+}
+
+.type-map:before  {
+  content: "\f041"; 
+  font-family: FontAwesome;
+}
+
+.type-video:before  {
+  content: "\f1c8"; 
+  font-family: FontAwesome;
+}
+
+.type-puzzle:before  {
+  content: "\f12e"; 
+  font-family: FontAwesome;
+}
 
 /* ========== КОНЕЦ Вывод квестов ========== */
 
