@@ -490,13 +490,16 @@ img.puzzle {
   font-size: 1.2em;
 }
 
-a.back-link {
+a.back-link, a.edit-link {
   color: #f1f1f1;
+  display: inline-block;
+  margin-top: 5px;
 }
 
-a.back-link:hover {
+a.back-link:hover, a.edit-link:hover {
   color: #fff;
 }
+
 
 /* ========== КОНЕЦ Вывод квестов ========== */
 

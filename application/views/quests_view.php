@@ -53,17 +53,15 @@
 										<a href="/Quests/passing?q=<?= $quest->id ?>"><h3> <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> <?= $quest->data->name ?></h3></a><br>
 										<p><b>Мета квесту:</b> <?= $quest->data->target ?></p><br>
 										<span><b>Додав квест:</b> <?= $quest->fio ?></span>
-                                        <a href="/Quests/add?edit=<?= $quest->id ?>">Редагувати кветс</a>
 									</div>
 
 									<div style="float: right;
-												padding-top: 30px;
-												padding-right: 30px;
 												text-align: center;
 												font-size: 3em;
-												color: #eb761f;
-												font-weight: bold;">
+												color: #b59248;
+												padding-right: 20px;">
 										<?= $counter ?>
+                                        <a class="btn btn-success edit-link" style="display: block;" href="/Quests/add?edit=<?= $quest->id ?>"> Редагувати квест <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
 									</div>
 								</div>
 							</div>

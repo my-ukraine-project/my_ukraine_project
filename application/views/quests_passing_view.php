@@ -54,6 +54,7 @@
                                     </div>
                                     <div class="col-sm-4 text-right">
                                         <a class="btn btn-danger back-link" href="/Quests"> <i class="fa fa-chevron-left" aria-hidden="true"></i> Повернутися до квестiв</a>
+                                        <a class="btn btn-success edit-link" href="/Quests/add?edit=<?= $quest->id ?>"> Редагувати квест <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
                                     </div>
                                 </div>
                             </div> 
