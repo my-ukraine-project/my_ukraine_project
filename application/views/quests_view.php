@@ -60,7 +60,7 @@
                                             } ?>
                                         </div>
 										<br>
-										<p style="text-align: right;"><b>Додав квест:</b> <?= $quest->fio ?></p>
+										<p><b>Додав квест:</b> <?= $quest->fio ?></p>
 
 									</div>
 
