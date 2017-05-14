@@ -46,10 +46,33 @@
                     $counter = 0;
                     foreach ($data->quests as $quest) { $counter++; ?>
                         <div class="quest alert alert-warning">
-                            <span><?= $counter ?></span>
-                            <a href="/Quests/passing?q=<?= $quest->id ?>"><h3> <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> <?= $quest->data->name ?></h3></a><br>
-                            <p><b>Мета квесту:</b> <?= $quest->data->target ?></p><br>
-                            <span><b>Додав квест:</b> <?= $quest->fio ?></span>
+                            
+							<div class="container-fluid">
+								<div class="row">
+									<div style="float: left;">
+										<a href="/Quests/passing?q=<?= $quest->id ?>"><h3> <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> <?= $quest->data->name ?></h3></a><br>
+										<p><b>Мета квесту:</b> <?= $quest->data->target ?></p><br>
+										<span><b>Додав квест:</b> <?= $quest->fio ?></span>
+									</div>
+
+									<div style="float: right; width: 100px;
+												height: 100px;
+												border: 1px solid #eb761f;
+												background: #fff;
+												text-align: center;
+												font-size: 2em;
+												color: #eb761f;
+												font-weight: bold;
+												padding-top: 30px;
+												-moz-border-radius: 50px;
+												-webkit-border-radius: 50px;
+												border-radius: 50px;">
+										<?= $counter ?>
+									</div>
+								</div>
+							</div>
+
+
                         </div>
 
                     <?php }
