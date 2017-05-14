@@ -50,14 +50,14 @@
 						<div class="content-info">
 							<p><b>Петро Кононович Конашевич-Сагайдачний</b> народився бл. 1582р. в селі Кульчиці в православній родині (тепер село Самбірського району Львівської області). <br><br> Упродовж 1589–1592 рр. здобував початкову освіту у Самборі. З 1592 по 1598 роки навчався в Острозькій академії. <br><br> Після випуску П.Сагайдачний переїхав до Львова, згодом — до Києва, де працював домашнім учителем, також помічником київського земського судді. <br><br> Змалку навчався військовій справі, вмів стріляти з лука, був високоосвіченою, інтелігентною, глибоко релігійною людиною. Брав участь в Молдавській і Лівонської кампаніях 1600-1603 рр.</p>
 						</div>
-						<a href="/Information" class="content-info-link">Читати далі <i class="fa fa-arrow-right" aria-hidden="true"></i> </a>
+						<a href="/Information" class="btn btn-info" style="margin-top: 20px;">Читати далі <i class="fa fa-arrow-right" aria-hidden="true"></i> </a>
 					</div>
 				</div>
 			</div>
 			<div class="row text-center">
 				<h1>Квести</h1>
 				<div class="quests-map">
-				  <img src="/img/quests-map.png" width="auto" height="auto" alt="" usemap="">
+				  <a href="/Quests"><img src="/img/quests-map.png" width="auto" height="auto" alt="" usemap=""></a> 
 				</div>
 			</div>
 			<div class="row">
