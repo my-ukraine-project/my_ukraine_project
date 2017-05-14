@@ -72,7 +72,7 @@
                                 if ($question->type === "image") { ?>
                                     <img src="/<?= $question->content ?>" style="width: 300px;">
                                 <?php } else if ($question->type === "puzzle") { ?>
-                                    <img src="/<?= $question->content ?>" style="width: 300px;">
+                                    <img onLoad="snapfit.add(this);" src="/<?= $question->content ?>" style="width: 300px;">
                                 <?php } else if ($question->type === "text") { ?>
                                     <p><?= $question->content ?></p>
                                 <?php } else if ($question->type === "video") { ?>
