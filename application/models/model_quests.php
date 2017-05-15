@@ -31,10 +31,12 @@ class Model_Quests extends Model {
     }
 
     public function get_quests() {
+
+        $user = $this->get_user_by_session();
         $ret = $this->mysqli->query(
         "SELECT q.*, u.fio FROM
                     Quests AS q JOIN Users AS u ON q.user_id = u.id
-                WHERE q.id NOT IN (SELECT quest_id FROM Completed_Quests)
+                WHERE NOT q.id IN (SELECT quest_id FROM Completed_Quests AS c WHERE c.user_id = $user->id)
                 LIMIT 100;");
 
         if (!$ret) {
