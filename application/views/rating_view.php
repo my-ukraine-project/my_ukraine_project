@@ -3,7 +3,7 @@
 		<div id="sidebar">
 			<img src="/img/logo.png" alt="" class="logo">
 			<div class="welcome">
-				<p>Привiт, <b><?php $var = explode(" ", $data->fio, 2); echo $var[0]; ?></b>!</p>
+				<p>Привiт, <b><?php $var = explode(" ", $data->user->fio, 2); echo $var[0]; ?></b>!</p>
 			</div>
 			<div class="main-menu">
 				<ul>
@@ -17,7 +17,7 @@
 			</div>
 			<div class="advance">
 				<p>Мої <b>успіхи</b></p>
-                <div class="advance-percent"><?= $data->progress ?>%</div>
+                <div class="advance-percent"><?= $data->user->progress ?>%</div>
 				<p>пройдено</p>
         <div class="logout">
             <a href="/Main/logout" class="btn btn-danger">Вийти</a>
@@ -38,45 +38,9 @@
 						 </tr>
 					 </thead>
 					 <tbody>
-						 <tr>
-							 <td>Учасник 3</td>
-							 <td>100</td>
-							 <td>20</td>
-						 </tr>
-						 <tr>
-							 <td>Учасник 1</td>
-							 <td>50</td>
-							 <td>10</td>
-						 </tr>
-						 <tr>
-							 <td>Учасник 2</td>
-							 <td>25</td>
-							 <td>5</td>
-						 </tr>
-						<tr>
-							 <td>Учасник 4</td>
-							 <td>0</td>
-							 <td>0</td>
-
-						 </tr>
-						<tr>
-							 <td>Учасник 5</td>
-							 <td>0</td>
-							 <td>0</td>
-
-						 </tr>
-						 <tr>
-							 <td>Учасник 6</td>
-							 <td>0</td>
-							 <td>0</td>
-
-						 </tr>
-						 <tr>
-							 <td>Учасник 7</td>
-							 <td>0</td>
-							 <td>0</td>
-
-						 </tr>
+                        <?php foreach ($data->ratings as $rating) { ?>
+                        <tr><td><?= $rating["fio"] ?></td><td><?= $rating["summark"] ?></td><td><?= $rating["quests"] ?></td></tr>
+                        <?php } ?>
 					 </tbody>
 				 </table>
 

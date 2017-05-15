@@ -8,14 +8,15 @@ class Controller_Rating extends Controller {
     }
 
     function action_index() {
-        $data = $this->model->get_user_by_session();
+        $user = $this->model->get_user_by_session();
 
-        if (!$data) {
+        if (!$user) {
             Route::redirect("/");
             return;
         }
 
-        $data->progress = $this->model->get_progress($data->id);
+        $user->progress = $this->model->get_progress($user->id);
+        $data = (object)array("user" => $user, "ratings"=> $this->model->get_rating());
         $this->view->generate('rating_view.php', 'template_view.php', $data);
     }
 

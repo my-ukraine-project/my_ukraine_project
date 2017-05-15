@@ -23,6 +23,14 @@ class Model {
         return $ret->num_rows == 1;
     }
 
+    public function get_rating() {
+        $ret = $this->mysqli->query(
+            "SELECT u.fio as fio, SUM(c.mark) as summark, COUNT(*) AS quests FROM
+                    Completed_Quests AS c JOIN Users AS u ON c.user_id = u.id GROUP BY fio ORDER BY summark DESC;");
+
+        return $ret ? $ret->fetch_all( MYSQLI_ASSOC ) : null;
+    }
+
     public function get_user_by_session() {
         if (empty($_COOKIE['uid'])) {
             return null;
