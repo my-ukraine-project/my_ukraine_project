@@ -34,13 +34,9 @@
 				 <table class="table table-hover table-bordered">
 					 <thead>
 						 <tr class="success">
-						 <th>Прізвище, ім'я</th>
-						 <th>Загальні бали</th>
-						 <th>Квест 1</th>
-						 <th>Квест 2</th>
-						 <th>Квест 3</th>
-						 <th>Квест 4</th>
-						 <th>Квест 5</th>
+						 <th style="width: 50%;">Прізвище, ім'я</th>
+						 <th style="width: 25%;">Загальні бали</th>
+						 <th style="width: 25%;">Кількість пройдених квестів </th>
 						 </tr>
 					 </thead>
 					 <tbody>
@@ -48,64 +44,40 @@
 							 <td>Учасник 3</td>
 							 <td>100</td>
 							 <td>20</td>
-							 <td>20</td>
-							 <td>20</td>
-							 <td>20</td>
-							 <td>20</td>
 						 </tr>
 						 <tr>
 							 <td>Учасник 1</td>
 							 <td>50</td>
-							 <td>10</td>
-							 <td>10</td>
-							 <td>10</td>
-							 <td>10</td>
 							 <td>10</td>
 						 </tr>
 						 <tr>
 							 <td>Учасник 2</td>
 							 <td>25</td>
 							 <td>5</td>
-							 <td>5</td>
-							 <td>5</td>
-							 <td>5</td>
-							 <td>5</td>
 						 </tr>
 						<tr>
 							 <td>Учасник 4</td>
 							 <td>0</td>
 							 <td>0</td>
-							 <td>0</td>
-							 <td>0</td>
-							 <td>0</td>
-							 <td>0</td>
+
 						 </tr>
 						<tr>
 							 <td>Учасник 5</td>
 							 <td>0</td>
 							 <td>0</td>
-							 <td>0</td>
-							 <td>0</td>
-							 <td>0</td>
-							 <td>0</td>
+
 						 </tr>
 						 <tr>
 							 <td>Учасник 6</td>
 							 <td>0</td>
 							 <td>0</td>
-							 <td>0</td>
-							 <td>0</td>
-							 <td>0</td>
-							 <td>0</td>
+
 						 </tr>
 						 <tr>
 							 <td>Учасник 7</td>
 							 <td>0</td>
 							 <td>0</td>
-							 <td>0</td>
-							 <td>0</td>
-							 <td>0</td>
-							 <td>0</td>
+
 						 </tr>
 					 </tbody>
 				 </table>
