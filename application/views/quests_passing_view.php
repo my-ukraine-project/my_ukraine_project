@@ -72,7 +72,19 @@
                                 if ($question->type === "image") { ?>
                                     <img src="/<?= $question->content ?>" style="width: 300px;">
                                 <?php } else if ($question->type === "puzzle") { ?>
-                                    <img onLoad="snapfit.add(this);" src="/<?= $question->content ?>" style="width: 300px;">
+                                    <p>Собирите пазл</p>
+                                    <img src="/<?= $question->content ?>" id="<?= $question->type ."-". $cnt ?>" style="width: 300px;">
+                                    <script type="text/javascript">
+                                        $(function () {
+                                            $('#input-<?= $question->type ."-". $cnt ?>').prop('checked', false);
+                                            snapfit.add(document.getElementById('<?= $question->type ."-". $cnt ?>'), {
+                                                "level": 1, "mixed": true, simple: true, polygon: true, callback: function () {
+                                                    $('#input-<?= $question->type ."-". $cnt ?>').prop('checked', true);
+                                                    alert("вы собрали пазл");
+                                                }
+                                            });
+                                        })
+                                    </script>
                                 <?php } else if ($question->type === "text") { ?>
                                     <p><?= $question->content ?></p>
                                 <?php } else if ($question->type === "video") { ?>
@@ -81,6 +93,12 @@
                                     <div class="quest-map"><?= $question->content ?></div>
                                 <?php }?>
 
+                            <?php if ($question->type === "puzzle") { ?>
+                                <input type="checkbox" name="<?= $question->type ."-". $cnt ?>"
+                                       id="input-<?= $question->type ."-". $cnt ?>" hidden>
+
+                            <?php } else { ?>
+
                                 <p style="margin-top: 20px; margin-bottom: 20px; font-size: 1.2em; font-weight: bold;"><?= $question->question ?></p>
                                 <?php if ($atype == "radio") { ?>
                                     <p><input type="radio" name="answer<?= $cnt ?>" value="1"> <label><?= $question->a1->text ?></label></p>
@@ -88,11 +106,13 @@
                                     <p><input type="radio" name="answer<?= $cnt ?>" value="3"> <label><?= $question->a3->text ?></label></p>
                                     <p><input type="radio" name="answer<?= $cnt ?>" value="4"> <label><?= $question->a4->text ?></label></p>
                                 <?php } else { ?>
-                                    <p><input type="checkbox" name="a1"> <label><?= $question->a1->text ?></label></p>
-                                    <p><input type="checkbox" name="a2"> <label><?= $question->a2->text ?></label></p>
-                                    <p><input type="checkbox" name="a3"> <label><?= $question->a3->text ?></label></p>
-                                    <p><input type="checkbox" name="a4"> <label><?= $question->a4->text ?></label></p>
+                                    <p><input type="checkbox" name="answer<?= $cnt ?>-1"> <label><?= $question->a1->text ?></label></p>
+                                    <p><input type="checkbox" name="answer<?= $cnt ?>-2"> <label><?= $question->a2->text ?></label></p>
+                                    <p><input type="checkbox" name="answer<?= $cnt ?>-3"> <label><?= $question->a3->text ?></label></p>
+                                    <p><input type="checkbox" name="answer<?= $cnt ?>-4"> <label><?= $question->a4->text ?></label></p>
                                 <?php } ?>
+
+                            <?php } ?>
 
                             </div>
                         <?php } ?>
