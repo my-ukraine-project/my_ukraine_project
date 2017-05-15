@@ -11,6 +11,16 @@ class Model_Quests extends Model {
         return $ret && ($this->mysqli->affected_rows == 1);
     }
 
+
+    public function add_mark($uid, $qid, $mark) {
+        echo "$uid, $qid, $mark<br>";
+        $this->mysqli->query("
+            INSERT INTO Completed_Quests (mark, quest_id, user_id) VALUE ($mark, $qid, $uid);
+        ");
+
+//        echo "mysqli_error: ". mysqli_error($this->mysqli);
+    }
+
     public function update($qid, $object) {
         $quest = base64_encode(json_encode($object));
         $ret = $this->mysqli->query("UPDATE Quests SET data = '$quest' WHERE id = $qid");
@@ -24,6 +34,7 @@ class Model_Quests extends Model {
         $ret = $this->mysqli->query(
         "SELECT q.*, u.fio FROM
                     Quests AS q JOIN Users AS u ON q.user_id = u.id
+                WHERE q.id NOT IN (SELECT quest_id FROM Completed_Quests)
                 LIMIT 100;");
 
         if (!$ret) {

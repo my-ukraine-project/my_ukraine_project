@@ -259,11 +259,25 @@ class Controller_Quests extends Controller {
         }
     }
 
+    function count_right($q) {
+        return count(array_filter(array($q["a1"], $q["a2"], $q["a3"], $q["a4"]), function ($e) {
+            return !!$e->right;
+        }));
+    }
+
     public function action_pass() {
         if ($_SERVER["REQUEST_METHOD"] != "POST") {
             Route::ErrorPage405();
             return;
         }
+
+        $user = $this->model->get_user_by_session();
+
+        if (!$user) {
+            Route::redirect("/");
+            return;
+        }
+
 
         if (!isset($_POST["qid"]) || empty($_POST["qid"]) || !is_numeric($_POST["qid"])) {
             return;
@@ -271,9 +285,58 @@ class Controller_Quests extends Controller {
 
         $quest = $this->model->get_quest_by_id(intval($_POST["qid"]));
 
-        print_r($_POST);
+        if (empty($quest)) {
+            Route::ErrorPage404();
+            return;
+        }
 
+        $quest = (array)$quest;
 
+        $mark = 0;
 
+        // text: 10, image: 20, video: 30, puzzle:40, map: 50
+
+        $cnt = 0;
+        foreach ($quest["questions"] as $question) { $cnt++;
+            $question = (array)$question;
+
+            if ($question["type"] === "puzzle") {
+                if (!empty($_POST["puzzle-$cnt"]) && $_POST["puzzle-$cnt"] === "on") {
+                    $mark += 40;
+                }
+            } else if (in_array($question["type"], array("text", "video", "map", "image"))) {
+                $count = $this->count_right($question);
+
+                $xmark = (array("text" => 10, "video" => 30, "map" => 50, "image" => 20))[$question["type"]];
+
+                if ($count == 1) {
+                    if (!empty($_POST["answer$cnt"]) && is_numeric($_POST["answer$cnt"])) {
+                        $num = intval($_POST["answer$cnt"]);
+                        $mark += $question["a$num"]->right ? $xmark:0;
+                    }
+                } else {
+
+                    if (!empty($_POST["answer$cnt-1"]) && $_POST["answer$cnt-1"] === "on") {
+                        $mark += $question["a1"]->right ? ($xmark / $count) : 0;
+                    }
+
+                    if (!empty($_POST["answer$cnt-2"]) && $_POST["answer$cnt-2"] === "on") {
+                        $mark += $question["a2"]->right ? ($xmark / $count) : 0;
+                    }
+
+                    if (!empty($_POST["answer$cnt-3"]) && $_POST["answer$cnt-3"] === "on") {
+                        $mark += $question["a3"]->right ? ($xmark / $count) : 0;
+                    }
+
+                    if (!empty($_POST["answer$cnt-4"]) && $_POST["answer$cnt-4"] === "on") {
+                        $mark += $question["a4"]->right ? ($xmark / $count) : 0;
+                    }
+                }
+            }
+        }
+
+        $this->model->add_mark($user->id, $quest["id"], $mark);
+
+        Route::redirect("/Rating");
     }
 }
