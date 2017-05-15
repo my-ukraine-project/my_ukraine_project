@@ -17,9 +17,7 @@
 			</div>
 			<div class="advance">
 				<p>Мої <b>успіхи</b></p>
-				<div class="advance-percent">
-					40%
-				</div>
+				<div class="advance-percent"><?= $data->progress ?>%</div>
 				<p>пройдено</p>
 				<div class="logout">
           <a href="/Main/logout" class="btn btn-danger">Вийти</a>

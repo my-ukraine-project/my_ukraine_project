@@ -16,6 +16,8 @@ class Controller_Quests extends Controller {
         }
 
         $quests = $this->model->get_quests();
+        $user->progress = $this->model->get_progress($user->id);
+
         $data = (object)array("user" => $user, "quests" => $quests);
 
         $this->view->generate('quests_view.php', 'template_view.php', $data);
@@ -39,8 +41,9 @@ class Controller_Quests extends Controller {
             return;
         }
 
-        $data = array("user" => $user, "quest" => $quest);
+        $user->progress = $this->model->get_progress($user->id);
 
+        $data = array("user" => $user, "quest" => $quest);
         $this->view->generate('quests_passing_view.php', 'template_view.php', $data);
     }
 
@@ -184,6 +187,7 @@ class Controller_Quests extends Controller {
             return;
         }
 
+        $user->progress = $this->model->get_progress($user->id);
 
         if ($_SERVER["REQUEST_METHOD"] != "POST" && !isset($_GET["edit"])) {
             $data = (object)array("user" => $user);

@@ -15,6 +15,7 @@ class Controller_Information extends Controller {
             return;
         }
 
+        $data->progress = $this->model->get_progress($data->id);
         $this->view->generate('information_view.php', 'template_view.php', $data);
     }
 

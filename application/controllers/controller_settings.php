@@ -16,6 +16,7 @@ class Controller_Settings extends Controller {
         }
 
         $data = $this->model->get_user_full($data);
+        $data->progress = $this->model->get_progress($data->id);
 
         $this->view->generate('settings_view.php', 'template_view.php', $data);
     }

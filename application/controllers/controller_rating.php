@@ -15,6 +15,7 @@ class Controller_Rating extends Controller {
             return;
         }
 
+        $data->progress = $this->model->get_progress($data->id);
         $this->view->generate('rating_view.php', 'template_view.php', $data);
     }
 

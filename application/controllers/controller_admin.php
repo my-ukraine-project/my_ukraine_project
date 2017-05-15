@@ -13,7 +13,15 @@ class Controller_Admin extends Controller {
 //            return;
 //        }
 
-    $this->view->generate('admin_index_view.php', 'template_view.php');
+        $data = $this->model->get_user_by_session();
+
+        if (!$data) {
+            Route::redirect("/");
+            return;
+        }
+
+        $data->progress = $this->model->get_progress($data->id);
+        $this->view->generate('admin_index_view.php', 'template_view.php', $data);
 
     }
 

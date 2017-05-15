@@ -12,6 +12,7 @@ class Controller_Main extends Controller {
         if (!$data) {
             $this->view->generate('main_view.php', 'template_view.php');
         } else {
+            $data->progress = $this->model->get_progress($data->id);
             $this->view->generate('main_dashboard_view.php', 'template_view.php', $data);
         }
     }

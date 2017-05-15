@@ -54,7 +54,16 @@ class Model {
     }
 
     public function get_progress($uid) {
+        $r1 = $this->mysqli->query("SELECT count(*) AS count FROM Quests");
+        $r2 = $this->mysqli->query("SELECT count(*) AS count FROM Completed_Quests WHERE user_id = $uid");
+        $c1 = $r1->fetch_object();
+        $c2 = $r2->fetch_object();
 
+        if (empty($c1) || empty($c2)) {
+            return 0;
+        }
+
+        return ($c2->count / $c1->count) * 100;
     }
 
     public function check_permission() {

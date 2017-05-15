@@ -14,6 +14,7 @@ class Controller_Map extends Controller {
             return;
         }
 
+        $data->progress = $this->model->get_progress($data->id);
         $this->view->generate('map_view.php', 'template_view.php', $data);
     }
 }
