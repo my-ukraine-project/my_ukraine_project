@@ -55,71 +55,86 @@ class Controller_Quests extends Controller {
 
         $obj->type = $_POST["content". $num];
 
-        if (empty($_POST["question". $num])) {
-            echo "empty(\$_POST[\"question$num\"])";
-            return null;
-        }
-
-        $obj->question = $_POST["question". $num];
 
         if (!in_array($obj->type, array("text", "video", "map", "image", "puzzle"))) {
             echo "Unknown content type!";
             return null;
         }
 
-        if (!isset($_POST["answer". $num ."-1"]) || empty($_POST["answer". $num ."-1"])) {
-            echo "answer$num-1 not set or empty";
-            return null;
-        }
+        if ($obj->type !== "puzzle") {
 
-        if (!isset($_POST["answer". $num ."-2"]) || empty($_POST["answer". $num ."-2"])) {
-            echo "answer$num-2 not set or empty";
-            return null;
-        }
+            if (empty($_POST["question". $num])) {
+                echo "empty(\$_POST[\"question$num\"])";
+                return null;
+            }
 
-        if (!isset($_POST["answer". $num ."-3"]) || empty($_POST["answer". $num ."-3"])) {
-            echo "answer$num-3 not set or empty";
-            return null;
-        }
+            $obj->question = $_POST["question". $num];
 
-        if (!isset($_POST["answer". $num ."-4"]) || empty($_POST["answer". $num ."-4"])) {
-            echo "answer$num-4 not set or empty";
-            return null;
-        }
+            if (!isset($_POST["answer". $num ."-1"]) || empty($_POST["answer". $num ."-1"])) {
+                echo "answer$num-1 not set or empty";
+                return null;
+            }
 
-        $obj->a1 = (object)array(
-            "text" => $_POST["answer". $num ."-1"],
-            "right" => (isset($_POST["right-answer". $num ."-1"]) && $_POST["right-answer". $num ."-1"] == "on")
-        );
+            if (!isset($_POST["answer". $num ."-2"]) || empty($_POST["answer". $num ."-2"])) {
+                echo "answer$num-2 not set or empty";
+                return null;
+            }
 
-        $obj->a2 = (object)array(
-            "text" => $_POST["answer". $num ."-2"],
-            "right" => (isset($_POST["right-answer". $num ."-2"]) && $_POST["right-answer". $num ."-2"] == "on")
-        );
-        $obj->a3 = (object)array(
-            "text" => $_POST["answer". $num ."-3"],
-            "right" => (isset($_POST["right-answer". $num ."-3"]) && $_POST["right-answer". $num ."-3"] == "on")
-        );
+            if (!isset($_POST["answer". $num ."-3"]) || empty($_POST["answer". $num ."-3"])) {
+                echo "answer$num-3 not set or empty";
+                return null;
+            }
 
-        $obj->a4 = (object)array(
-            "text" => $_POST["answer". $num ."-4"],
-            "right" => (isset($_POST["right-answer". $num ."-4"]) && $_POST["right-answer". $num ."-4"] == "on")
-        );
+            if (!isset($_POST["answer". $num ."-4"]) || empty($_POST["answer". $num ."-4"])) {
+                echo "answer$num-4 not set or empty";
+                return null;
+            }
 
-        $arr = array($obj->a1->right, $obj->a2->right, $obj->a3->right, $obj->a4->right);
-        $right = count(array_filter($arr, function ($item) { return !!$item; }));
+            $obj->a1 = (object)array(
+                "text" => $_POST["answer". $num ."-1"],
+                "right" => (isset($_POST["right-answer". $num ."-1"]) && $_POST["right-answer". $num ."-1"] == "on")
+            );
 
-        if (!($right >= 1 && $right < 4)) {
-            echo "Правильных ответов должно быть больше одного но меньше 4х";
-            return null;
+            $obj->a2 = (object)array(
+                "text" => $_POST["answer". $num ."-2"],
+                "right" => (isset($_POST["right-answer". $num ."-2"]) && $_POST["right-answer". $num ."-2"] == "on")
+            );
+            $obj->a3 = (object)array(
+                "text" => $_POST["answer". $num ."-3"],
+                "right" => (isset($_POST["right-answer". $num ."-3"]) && $_POST["right-answer". $num ."-3"] == "on")
+            );
+
+            $obj->a4 = (object)array(
+                "text" => $_POST["answer". $num ."-4"],
+                "right" => (isset($_POST["right-answer". $num ."-4"]) && $_POST["right-answer". $num ."-4"] == "on")
+            );
+
+            $arr = array($obj->a1->right, $obj->a2->right, $obj->a3->right, $obj->a4->right);
+            $right = count(array_filter($arr, function ($item) { return !!$item; }));
+
+            if (!($right >= 1 && $right < 4)) {
+                echo "Правильных ответов должно быть больше одного но меньше 4х";
+                return null;
+            }
         }
 
         if (in_array($obj->type, array("text", "video", "map"))) {
+
+            if (!isset($_POST[$obj->type . $num]) || empty($_POST[$obj->type . $num])) {
+                echo "Не заполнено текстовое поле для эелемента ". $obj->type;
+                return null;
+            }
+
             $obj->content = $_POST[$obj->type . $num];
         }
 
         if (in_array($obj->type, array("image", "puzzle"))) {
             $file = $_FILES[$obj->type . $num];
+
+            if (!isset($_FILES[$obj->type . $num]) || empty($_FILES[$obj->type . $num])) {
+                echo "Не выбрано изображение";
+                return null;
+            }
 
             if ($file["size"] > MAX_IMAGE_FILE_SIZE) {
                 echo "Максимально допустимый вес изображения ". MAX_IMAGE_FILE_SIZE ." (bytes)";
@@ -255,6 +270,8 @@ class Controller_Quests extends Controller {
         }
 
         $quest = $this->model->get_quest_by_id(intval($_POST["qid"]));
+
+        print_r($_POST);
 
 
 

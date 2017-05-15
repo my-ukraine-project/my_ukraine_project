@@ -67,7 +67,10 @@
                     <!--    <div class="tab-content">-->
                         <?php $cnt = 0; foreach ($quest->questions as $question) { $cnt++;
                             ?><div class="alert alert-success"><?php
-                                $atype = count_right($question) > 1 ? "checkbox" : "radio";
+                                $atype = null;
+                                if ($question->type !== "puzzle") {
+                                    $atype = count_right($question) > 1 ? "checkbox" : "radio";
+                                }
 
                                 if ($question->type === "image") { ?>
                                     <img src="/<?= $question->content ?>" style="width: 300px;">
