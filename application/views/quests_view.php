@@ -54,7 +54,7 @@
 										<p><b>Мета квесту:</b> <?= $quest->data->target ?></p>
 										<div class="quest-content">
 											<br>
-											<p><b>Содержимое квеста:</b></p>
+											<p><b>Вміст квесту:</b></p>
                                             <?php foreach ($quest->data->questions as $question) {
                                                 ?><span style="margin-right: 10px;" class="type-<?= $question->type ?>"></span><?php
                                             } ?>

@@ -75,7 +75,7 @@
                                 if ($question->type === "image") { ?>
                                     <img src="/<?= $question->content ?>" style="width: 300px;">
                                 <?php } else if ($question->type === "puzzle") { ?>
-                                    <p>Собирите пазл</p>
+                                    <p><b>Зберіть пазл, перетягуючи окремі елементи, отримавши в підсумку цілісну картину.</b></p>
                                     <img src="/<?= $question->content ?>" id="<?= $question->type ."-". $cnt ?>" style="width: 300px;">
                                     <script type="text/javascript">
                                         $(function () {
@@ -83,7 +83,7 @@
                                             snapfit.add(document.getElementById('<?= $question->type ."-". $cnt ?>'), {
                                                 "level": 1, "mixed": true, simple: true, polygon: true, callback: function () {
                                                     $('#input-<?= $question->type ."-". $cnt ?>').prop('checked', true);
-                                                    alert("вы собрали пазл");
+                                                    alert("Пазл успішно зібран!");
                                                 }
                                             });
                                         })
